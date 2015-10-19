@@ -1,0 +1,459 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>牛买网网销系统(ERP)</title>
+<link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet"/>
+<link type="text/css" href="/Admin/Css/orderManage.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="head">
+    <div class="headL">牛买网ERP网销系统</div>
+    <ul class="headR">
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" id="notice">
+                <span></span>
+                <label>0</label>
+                <div class="clear"></div>
+            </a>
+        </li>
+        <li class="border"></li>
+        <li id="accSet">
+            <a href="javascript:;" class="userName">
+                <span>虫</span>
+                <label>虫子</label>
+                <b></b>
+                <div class="clear"></div>
+            </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+<div class="myAccount" style="display:none;">
+    <div class="accountTitle">我的账户<b></b></div>
+    <ul>
+        <li><a href="/Admin/Account.html" class="set"><b></b>账户设置</a></li>
+        <li class="border"></li>
+        <li><a href="#" class="help"><b></b>帮助中心</a></li>
+    </ul>
+    <a href="javascript:;" class="btnOut">退出登录</a>
+</div>
+<div id="menu" style="display:block;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) 0px 0px;"></b><span>商品管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -21px 0px;"></b><span>报表统计</span></a></li>
+        <li><a href="javasctipt:;" class="on"><b style="background: url(/Admin/Images/AdminIcons.png) -42px -21px;"></b><span>订单管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -84px 0px;"></b><span>权限管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -105px 0px;"></b><span>文章管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -126px 0px;"></b><span>商家入驻</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -147px 0px;"></b><span>广告管理</span></a></li>
+        <li>
+            <a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span><label></label></a>
+            <dl>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -315px -199px;"></b><span>会员信息</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -339px -199px;"></b><span>分红操作</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -363px -199px;"></b><span>会员留言</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -386px -199px;"></b><span>充值提现</span></a></dd>
+            </dl>
+        </li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -168px 0px;"></b><span>短信管理</span></a></li>        
+        <li class="empty"></li>
+    </ul>
+    <div class="menuBottom">
+        <div class="border"></div>
+        <div class="bottomBtns">
+            <a href="javascript:;" id="btnFold"><b></b><label style="display:none;">折叠</label></a>
+            <a href="javascript:;" id="btnHelp"><b></b><label style="display:none;">帮助中心</label></a>
+            <a href="javascript:;" id="btnSet"><b></b><label style="display:none;">系统设置</label></a>
+        </div>
+    </div>
+</div>
+<div id="menu2" style="display:none;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" title="商品管理"><b style="background: url(/Admin/Images/AdminIcons.png) -193px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="报表统计"><b style="background: url(/Admin/Images/AdminIcons.png) -226px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="订单管理" class="on"><b style="background: url(/Admin/Images/AdminIcons.png) -259px -140px;"></b></a></li>
+        <li><a href="javasctipt:;" title="会员管理"><b style="background: url(/Admin/Images/AdminIcons.png) -292px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="权限管理"><b style="background: url(/Admin/Images/AdminIcons.png) -326px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="文章管理"><b style="background: url(/Admin/Images/AdminIcons.png) -357px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="商家入驻"><b style="background: url(/Admin/Images/AdminIcons.png) -391px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="广告管理"><b style="background: url(/Admin/Images/AdminIcons.png) -424px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="短信管理"><b style="background: url(/Admin/Images/AdminIcons.png) -460px -106px;"></b></a></li>
+        <li class="empty"></li>
+    </ul>   
+    <div class="menu2Bottom">
+        <div class="border"></div>
+        <div class="bottom2Btns">
+            <a href="javascript:;" id="btnOpen"><b></b><label style="display:none;">展开</label></a>
+        </div>
+    </div>
+</div>
+<div class="main">    
+    <div class="navBar">
+        <div id="navL" style="margin-left:235px;"><b></b><span>订单管理</span></div>
+        <ul>
+            <li><a href="javascript:;" id="filter" class="filter-icon"><b></b><span>筛选项</span></a></li>
+            <li class="border"></li>
+            <li><a href="javascript:;" id="more" class="more-icon"><b></b><span>更多</span></a>
+                <dl class="more" style="display:none;">
+                    <dd><a href="#" class="more1"><b></b>批量发货</a></dd>
+                    <dd><a href="#" class="more2"><b></b>批量作废</a></dd>
+                    <dd><a href="#" class="more3"><b></b>批量打印</a></dd>
+                </dl>
+                <div class="send" style="display:none;">
+                    <div class="sendTitle">批量发货<b></b></div>
+                    <div class="sendCont">
+                        <p>批量发货后，不可以修改，请慎重选择。</p>
+                        <a href="javascript:;" class="btnConf">确定发货</a>
+                    </div>
+                </div>
+                <div class="invalid" style="display:none;">
+                    <div class="invalidTitle">批量作废<b></b></div>
+                    <div class="invalidCont">
+                        <p>批量作废后，不可以修改，请慎重选择。</p>
+                        <a href="javascript:;" class="btnConf">确定作废</a>
+                    </div>
+                </div>
+            </li>
+            <li class="border"></li>
+            <li><a href="javascript:;" id="search"><b></b></a></li>
+        </ul>
+        <div class="clear"></div>
+    </div>
+    <div id="conter">
+        <div id="listBox" style="margin-left:235px;margin-right:360px;">
+            <div class="orderManage">
+                <div class="manageTitle">
+                    <p>当前订单</p>
+                    <div class="check"><a href="javascript:;" class="on">已付款</a><a href="javascript:;">未付款</a><a href="javascript:;">已发货</a><a href="javascript:;">交易成功</a></div>
+                </div>
+                <div class="orderCont">
+                    <div class="border"></div>
+                    <dl class="orderList">
+                        <dt>
+                            <span class="orderNum"><input type="checkbox"/><span>订单编号：<a href="javascript:;"><b class="order-num">KS201541417231051379</b></a></span></span>
+                            <label class="opeBtns" style="display:none;">
+                                <a href="javascript:;" title="发货" class="opeBtns1"></a>
+                                <a href="javascript:;" title="订单作废" class="opeBtns2"></a>
+                                <a href="javascript:;" title="打印" class="opeBtns3"></a>
+                                <a href="javascript:;" title="修改订单" class="opeBtns4"></a>
+                            </label>
+                        </dt>
+                        <dd>  
+                            <div class="orderIntro">
+                                <div class="proTitle"><a href="#">荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿</a><span>数量：2</span></div>
+                                <div class="proPrice">
+                                    <p class="opeTime"><b></b>2015-04-20 17:30</p>
+                                    <span>变形金刚 ￥360.00元</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd>  
+                            <div class="orderIntro">
+                                <div class="proTitle"><a href="#">荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿</a><span>数量：2</span></div>
+                                <div class="proPrice">
+                                    <p class="opeTime"><b></b>2015-04-20 17:30</p>
+                                    <span>变形金刚 ￥360.00元</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd>  
+                            <div class="orderIntro">
+                                <div class="proTitle"><a href="#">荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿</a><span>数量：2</span></div>
+                                <div class="proPrice">
+                                    <p class="opeTime"><b></b>2015-04-20 17:30</p>
+                                    <span>变形金刚 ￥360.00元</span>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl> 
+                    <dl class="orderList">
+                        <dt>
+                            <span class="orderNum"><input type="checkbox"/><span>订单编号：<a href="javascript:;"><b class="order-num">KS201541417231051379</b></a></span></span>
+                            <label class="opeBtns" style="display:none;">
+                                <a href="javascript:;" title="发货" class="opeBtns1"></a>
+                                <a href="javascript:;" title="订单作废" class="opeBtns2"></a>
+                                <a href="javascript:;" title="打印" class="opeBtns3"></a>
+                                <a href="javascript:;" title="修改订单" class="opeBtns4"></a>
+                            </label>
+                        </dt>
+                        <dd>  
+                            <div class="orderIntro">
+                                <div class="proTitle"><a href="#">荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿</a><span>数量：2</span></div>
+                                <div class="proPrice">
+                                    <p class="opeTime"><b></b>2015-04-20 17:30</p>
+                                    <span>变形金刚 ￥360.00元</span>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl> 
+                    <dl class="orderList">
+                        <dt>
+                            <span class="orderNum"><input type="checkbox"/><span>订单编号：<a href="javascript:;"><b class="order-num">KS201541417231051379</b></a></span></span>
+                            <label class="opeBtns" style="display:none;">
+                                <a href="javascript:;" title="发货" class="opeBtns1"></a>
+                                <a href="javascript:;" title="订单作废" class="opeBtns2"></a>
+                                <a href="javascript:;" title="打印" class="opeBtns3"></a>
+                                <a href="javascript:;" title="修改订单" class="opeBtns4"></a>
+                            </label>
+                        </dt>
+                        <dd>  
+                            <div class="orderIntro">
+                                <div class="proTitle"><a href="#">荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿</a><span>数量：2</span></div>
+                                <div class="proPrice">
+                                    <p class="opeTime"><b></b>2015-04-20 17:30</p>
+                                    <span>变形金刚 ￥360.00元</span>
+                                </div>
+                            </div>
+                        </dd>
+                        <dd>  
+                            <div class="orderIntro">
+                                <div class="proTitle"><a href="#">荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿</a><span>数量：2</span></div>
+                                <div class="proPrice">
+                                    <p class="opeTime"><b></b>2015-04-20 17:30</p>
+                                    <span>变形金刚 ￥360.00元</span>
+                                </div>
+                            </div>
+                        </dd>
+                    </dl>                                                
+                    <div class="pagesList">
+                        <div class="pagesCont">
+                            <a href="#" class="pagesPrev"></a>
+                            <a href="#">1</a>
+                            <label>···</label>
+                            <a href="#">12</a>
+                            <a href="#">13</a>
+                            <a href="#">14</a>
+                            <a href="#">100</a>
+                            <a href="#" class="pagesNext"></a>   
+                            <input value="0"/>       
+                            <a href="#" class="jump">跳转</a>                                  
+                        </div>
+                    </div>                
+                </div>            
+            </div>
+        </div>
+        <div class="contR">
+            <div class="userBox">
+                <div class="name">
+                    <span>虫</span>
+                    <div class="time"><p>虫子, 下午好！起来运动一下</p><label>今天是 星期六，2015年04月11日</label></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="numBox">
+                    <a href="#" class="current"><span>1500</span><label>待发货</label></a>
+                    <a href="#" class="shelves"><span>1200</span><label>已发货</label></a>
+                    <a href="#" class="promotion"><span>35</span><label>交易成功</label></a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="message">
+                <div class="messTitle"><b></b><span>信息通告</span></div>
+                <div class="messCont"><b></b></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="filterMain" style="display:none;">
+    <div class="filterTitle">筛选项<span></span></div>
+    <div class="filterCont">
+        <ul>
+            <li>
+                <span>订单状态：</span>
+                <select>
+                    <option></option>
+                </select>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>订单编号：</span>
+                <input type="text"/>
+                <div class="clear"></div>
+            </li>
+            <li class="date">
+                <span>选择日期：</span>
+                <input/>
+                <a href="javascript:;"></a>
+                <div class="clear"></div>
+            </li>
+            <li class="look">
+                <span>查看选项：</span>
+                <input/>
+                <b></b>
+                <select>
+                    <option>用户名称</option>
+                </select>
+                <div class="clear"></div>
+            </li>
+            <li class="filterBtns">
+                 <a href="javascript:;" class="btnFilter">筛选</a>
+                 <a href="javascript:;"class="btnRemove">重置</a>
+                 <div class="clear"></div>
+            </li>
+         </ul>
+     </div>  
+</div>
+<div class="orderDetails">
+    <div class="detailsTitle">订单详情<span class="orderDetails-closeBtn"></span></div>
+    <div class="detailsCont">
+        <div class="orderWrap">
+            <p>订单编号：<span>KS201541417231051379</span></p>
+            <dl>
+                <dt>
+                    <span class="nameTitle">商品名称</span>
+                    <span>单价</span>
+                    <span>数量</span>
+                    <span>小计</span>
+                </dt>
+                <dd>
+                    <span class="proName">1&nbsp;&nbsp;&nbsp;荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿&nbsp;&nbsp;M&nbsp;&nbsp;黑色</span>
+                    <span class="proMoney">￥360.00</span>
+                    <span class="proUnit">1桶</span>
+                    <span class="proBills">300券</span>
+                </dd>
+                <dd>
+                    <span class="proName">1&nbsp;&nbsp;&nbsp;荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿&nbsp;&nbsp;M&nbsp;&nbsp;黑色</span>
+                    <span class="proMoney">￥360.00</span>
+                    <span class="proUnit">1桶</span>
+                    <span class="proBills">300券</span>
+                </dd>
+                <dd>
+                    <span class="proName">1&nbsp;&nbsp;&nbsp;荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿&nbsp;&nbsp;M&nbsp;&nbsp;黑色</span>
+                    <span class="proMoney">￥360.00</span>
+                    <span class="proUnit">1桶</span>
+                    <span class="proBills">300券</span>
+                </dd>
+                <dd class="orderMoney">
+                    <div class="moneyCont">
+                        <ul>
+                            <li><label>￥720.00</label><span>订单金额：</span><div class="clear"></div></li>
+                            <li><label>300券</label><span>+兑换券：</span><div class="clear"></div></li>
+                            <li><label>￥5.00</label><span>+运费：</span><div class="clear"></div></li>
+                        </ul>
+                        <div class="moneyTotal">已付总额：<b>￥720+300券</b></div>
+                    </div>
+                    <div class="clear"></div>
+                </dd>
+            </dl>
+        </div>
+        <div class="sendWrap">
+            <p>发货信息</p>
+            <ul>
+                <li><span>发货状态：</span><label>未发货</label></li>
+                <li><span>收货人：</span><label>变形金刚</label></li>
+                <li><span>地址：</span><label>河南省郑州市金水区</label></li>
+                <li><span>联系电话：</span><label>15617888128</label></li>
+                <li><span>发货日期：</span><label>2015-04-22 16:16:16</label></li>
+                <li><span>电子邮件：</span><label>chongzi@nbbuy.com</label></li>
+            </ul>
+            <div class="sendCom">
+                <span>快递公司：</span>
+                <select>
+                    <option>申通快递</option>
+                </select>
+            </div>
+            <div class="sendNum">
+                <span>快递公司：</span>
+                <input/>
+            </div>
+            <a href="javascript:;" class="btnSend">确定发货</a>
+        </div>
+    </div>  
+</div>
+<div class="orderMod">
+    <div class="modTitle">订单修改<span class="orderMod-closeBtn"></span></div>
+    <div class="orderNumber3">KS201541417231051379</div>
+    <ul class="orderInfor">
+        <li class="orderMessage">发货信息</li>
+        <li class="orderName"> 
+            <label><span>*</span>收货人：</label>
+            <input type="text" value="变形金刚"/>
+            <div class="clear"></div>
+        </li>
+        <li class="orderPlace">
+            <label><span>*</span>所在地区：</label>
+            <select>
+                <option>河南省</option>
+            </select>
+            <select>
+                <option>郑州市</option>
+            </select>
+            <select>
+                <option>金水区</option>
+            </select>
+            <div class="clear"></div>
+        </li>
+        <li class="orderAdd">
+            <label><span>*</span>详细地址：</label>
+            <input type="text" value="河南省郑州市"/>
+            <div class="clear"></div>
+        </li>
+        <li class="orderPhone">
+            <label><span>*</span>手机号码：</label>
+            <input type="text" value="15617888128"/>
+            <div class="clear"></div>
+        </li>
+    </ul>
+    <dl class="modList">
+        <dt>
+            <span class="nameTitle2">商品名称</span>
+            <span>单价</span>
+            <span>数量</span>
+            <span>小计</span>
+        </dt>
+        <dd>
+            <span class="proName2">1&nbsp;&nbsp;&nbsp;荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿&nbsp;&nbsp;M&nbsp;&nbsp;黑色</span>
+            <span>￥360.00</span>
+            <span>1桶</span>
+            <span>300券</span>
+        </dd>
+        <dd>
+            <span class="proName2">1&nbsp;&nbsp;&nbsp;荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿&nbsp;&nbsp;M&nbsp;&nbsp;黑色</span>
+            <span>￥360.00</span>
+            <span>1桶</span>
+            <span>300券</span>
+        </dd>
+        <dd>
+            <span class="proName2">1&nbsp;&nbsp;&nbsp;荷兰美素本土奶粉herobaby婴儿奶粉1段2段3段4段5段婴儿&nbsp;&nbsp;M&nbsp;&nbsp;黑色</span>
+            <span>￥360.00</span>
+            <span>1桶</span>
+            <span>300券</span>
+        </dd>
+        <dd class="orderMoney2">
+            <div class="moneyCont2">
+                <ul>
+                    <li>
+                        <div class="priceR"><label>￥</label><input value="720.00"/><label>元</label></div>
+                        <span>订单金额：</span>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="priceR"><label>￥</label><input value="300"/><label>券</label></div>
+                        <span>兑换券：</span>
+                        <div class="clear"></div>
+                    </li>
+                    <li>
+                        <div class="priceR"><label>￥</label><input value="5.00"/><label>元</label></div>
+                        <span>运费：</span>
+                        <div class="clear"></div>
+                    </li>
+                </ul>
+                <div class="moneyTotal2">已付总额：<b>￥720+300券</b></div>
+            </div>
+            <div class="clear"></div>
+        </dd>
+    </dl>
+    <div class="confMod">
+        <a href="javascript:;">确定修改</a>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+<script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
+<script type="text/javascript" src="/Admin/Js/common.js"></script>
+<script type="text/javascript" src="/Admin/Js/orderManage.js"></script>
+</html>

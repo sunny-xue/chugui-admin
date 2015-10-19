@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title></title>
+<style>
+body,div,p,span,label,a,ul,li{margin:0px;padding:0px;}
+body{font-size:12px;font-family:"Microsoft YaHei";}
+a{text-decoration:none;}
+ul li{list-style:none;}
+.top{width:100%;height:35%;background:#575757;}
+.top span{display:block;font-size:30px;color:#fff;text-align:center;text-shadow:0px 5px 6px rgba(0,0,0,.9);opacity:.6;padding-top:5%;}
+.top label{display:block;font-size:24px;font-weight:bold;color:#fff;text-align:center;line-height:50px;margin-top:3%;}
+.top p{font-size:18px;color:#fff;text-align:center;}
+.main{width:100%;height:30%;background:#fff;}
+.main ul{width:560px;height:106px;position:absolute;top:50%;left:50%;margin:-53px 0px 0px -250px;}
+.main ul li{float:left;margin-right:40px;}
+.main ul li a{width:78px;height:106px;display:block;}
+.google a{background:url(/Admin/Images/Browser.png) no-repeat 0px 0px;}
+.ie a{background:url(/Admin/Images/Browser.png) no-repeat -112px 0px;}
+.fireFox a{background:url(/Admin/Images/Browser.png) no-repeat -223px 0px;}
+.safari a{background:url(/Admin/Images/Browser.png) no-repeat -335px 0px;}
+.main .opera{margin-right:0px;}
+.opera a{background:url(/Admin/Images/Browser.png) no-repeat -446px 0px;}
+.bottom{width:100%;height:35%;background:#575757;}
+</style>
+<script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("body").height($(document).height());
+    });
+</script>
+</head>
+<body>
+<div class="top">
+    <span>牛买网友情提示</span>
+    <label>很抱歉！您正在使用的浏览器版本过低，无法正常使用我们的网站，请升级后再试！</label>
+    <p>为获得最佳浏览体验，建议您升级或选用其他浏览器。我们列出了一些最受欢迎的浏览器供您升级。点击图标将转到相应下载页：</p>
+</div>
+<div class="main">
+    <ul>
+        <li class="google"><a href="#"></a></li>
+        <li class="ie"><a href="#"></a></li>
+        <li class="fireFox"><a href="#"></a></li>
+        <li class="safari"><a href="#"></a></li>
+        <li class="opera"><a href="#"></a></li>
+    </ul>
+</div>
+<div class="bottom"></div>
+</body>
+</html>

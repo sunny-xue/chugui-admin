@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>牛买网网销系统(ERP)</title>
+<link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet"/>
+<style type="text/css">
+.bodyBg{width:100%;height:100%;position:absolute;bottom:0px;left:0px;}
+.content{width:1200px;margin:60px auto 0px;position:relative;}
+.content p{font-size:36px;color:#c5d5d6;text-align:center;padding:80px 0px 30px;}
+.content ul{overflow:hidden;padding-top:5px;}
+.content ul li{width:270px;height:166px;float:left;border-radius:5px;margin:15px;}
+.content ul li:hover{box-shadow:0px 0px 15px 10px rgba(0,0,0,.3);}
+.content ul li b{width:54px;height:44px;display:block;margin:45px auto 5px;}
+.content ul li span{line-height:35px;font-size:24px;color:#fff;display:block;text-align:center;}
+.pro{background:#7ac5a5;}
+.pro b{background:url(/Admin/Images/AdminIcons.png) no-repeat -321px -339px;}
+.form{background:#f3cec1;}
+.form b{background:url(/Admin/Images/AdminIcons.png) no-repeat -388px -339px;}
+.order{background:#00a9bf;}
+.order b{background:url(/Admin/Images/AdminIcons.png) no-repeat -448px -339px;}
+.member{background:#008cbf;}
+.member b{background:url(/Admin/Images/AdminIcons.png) no-repeat -321px -399px;}
+.inter{background:#efb07c;}
+.inter b{background:url(/Admin/Images/AdminIcons.png) no-repeat -253px -399px;}
+.article{background:#8ad1d8;}
+.article b{background:url(/Admin/Images/AdminIcons.png) no-repeat -388px -399px;}
+.shop{background:#f9a1ab;}
+.shop b{background:url(/Admin/Images/AdminIcons.png) no-repeat -74px -481px;}
+.ad{background:#7ac5a5;}
+.ad b{background:url(/Admin/Images/AdminIcons.png) no-repeat 0px -481px;}
+.message{background:#ffce79;}
+.message b{background:url(/Admin/Images/AdminIcons.png) no-repeat -158px -481px;}
+.purchase{background:#df605a;}
+.purchase b{background:url(/Admin/Images/AdminIcons.png) no-repeat -252px -481px;}
+</style>
+<script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        //$(".bodyBg").height($(document).height() - 60);//主体背景图片自适应
+        $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        $(window).resize(function () {
+            $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        });
+        //顶部消息通知
+        $("#notice").mouseover(function () {
+            $(this).children("span").css("background-position", "-486px 0px");
+        });
+        $("#notice").mouseout(function () {
+            $(this).children("span").css("background-position", "-466px 0px");
+        });        
+        //我的账户
+        $("#accSet").click(function () {
+            $(".myAccount").toggle("slow");
+        });
+        $(".accountTitle").click(function () {
+            $("#accSet").click();
+        });
+    });
+</script>
+</head>
+<body>
+<div class="head">
+    <div class="headL">牛买网ERP网销系统</div>
+    <ul class="headR">
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" id="notice">
+                <span></span>
+                <label>0</label>
+                <div class="clear"></div>
+            </a>
+        </li>
+        <li class="border"></li>
+        <li id="accSet">
+            <a href="javascript:;" class="userName">
+                <span>虫</span>
+                <label>虫子</label>
+                <b></b>
+                <div class="clear"></div>
+            </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+<div class="myAccount" style="display:none;">
+    <div class="accountTitle">我的账户<b></b></div>
+    <ul>
+        <li><a href="/Admin/Account.html" class="set"><b></b>账户设置</a></li>
+        <li class="border"></li>
+        <li><a href="#" class="help"><b></b>帮助中心</a></li>
+    </ul>
+    <a href="javascript:;" class="btnOut">退出登录</a>
+</div>
+<div class="main">
+    <img src="/Admin/Images/Indexbg.jpg" class="bodyBg"/>
+    <div class="content">
+        <p>牛买网ERP网销系统</p>
+        <ul>
+            <li class="pro"><a href="/Admin/ProManage.html"><b></b><span>商品管理</span></a></li>
+            <li class="form"><a href="#"><b></b><span>报表统计</span></a></li>
+            <li class="order"><a href="/Admin/OrderManage.html"><b></b><span>订单管理</span></a></li>
+            <li class="member"><a href="/Admin/Members.html"><b></b><span>会员管理</span></a></li>
+            <li class="inter"><a href="/Admin/Internal.html"><b></b><span>内部管理</span></a></li>
+            <li class="article"><a href="/Admin/Article.html"><b></b><span>文章管理</span></a></li>
+            <li class="shop"><a href="#"><b></b><span>商家入驻</span></a></li>
+            <li class="ad"><a href="/Admin/AdManage.html"><b></b><span>广告管理</span></a></li>
+            <li class="message"><a href="#"><b></b><span>短信管理</span></a></li>
+            <li class="purchase"><a href="/Admin/Customer.html"><b></b><span>采购管理</span></a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

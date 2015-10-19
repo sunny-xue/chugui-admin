@@ -1,0 +1,113 @@
+#navL b{width:20px;height:20px;float:left;background:url(/Admin/Images/AdminIcons.png) no-repeat -109px -227px;margin:15px 10px 0px 0px;}
+#navL span{line-height:48px;font-size:20px;color:#5c6371;float:left;}
+
+/*订单列表margin:15px 360px 0px 235px;*/
+.orderManage{border:1px solid #e1e1e1;background:#fbfbfb;}
+
+.orderCont{margin:0px 20px;}
+.orderCont .border{height:15px;border-bottom:1px solid #e1e1e1;}
+.orderList dt{height:40px;line-height:40px;border-top:1px solid #fff;border-bottom:1px solid #e1e1e1;overflow:hidden;}
+.orderNum{float:left;overflow:hidden;margin-left:10px;}
+.orderNum input{float:left;margin:13px 10px 0px 0px;}
+.orderNum span{float:left;font-size:14px;color:#333;}
+.orderNum span b{font-size:12px;font-weight:normal;}
+.orderNum a{color:#333;}
+.proTitle{overflow:hidden;line-height:50px;}
+.proTitle a{float:left;color:#333;}
+.proTitle span{float:left;color:#666;margin-left:20px;}
+.orderList dd{border-bottom:1px solid #e1e1e1;overflow:hidden;padding-bottom:10px;}
+.orderList dt:hover{background:#f9f9f7;}
+.orderIntro{margin-left:20px;}
+.proPrice{overflow:hidden;}
+.proPrice p{width:130px;height:25px;background:#fbebeb;border-radius:1px;overflow:hidden;float:left;line-height:26px;font-family:Arial;color:#a94442;}
+.proPrice p b{width:19px;height:19px;background:url(/Admin/Images/AdminIcons.png) -235px -21px;float:left;margin:3px 2px 0px 5px;}
+.proPrice span{float:left;line-height:25px;margin-left:10px;}
+.opeBtns{float:right;overflow:hidden;}
+.opeBtns a{width:16px;height:16px;float:left;margin:12px 15px 0px 0px;}
+.opeBtns1{background:url(/Admin/Images/AdminIcons.png) no-repeat 0px -256px;}
+.opeBtns1:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat 0px -281px;}
+.opeBtns2{background:url(/Admin/Images/AdminIcons.png) no-repeat -34px -257px;}
+.opeBtns2:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -34px -282px;}
+.opeBtns3{background:url(/Admin/Images/AdminIcons.png) no-repeat -68px -257px;}
+.opeBtns3:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -68px -282px;}
+.opeBtns4{background:url(/Admin/Images/AdminIcons.png) no-repeat -103px -256px;}
+.opeBtns4:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -103px -281px;}
+
+/*右侧*/
+.contR{width:330px;margin:-790px 15px 0px 30px;float:right;}
+.more1 b{background:url(/Admin/Images/AdminIcons.png) no-repeat 0px -256px;}
+.more2 b{background:url(/Admin/Images/AdminIcons.png) no-repeat -34px -257px;}
+.more3 b{background:url(/Admin/Images/AdminIcons.png) no-repeat -68px -257px;}
+/*确认发货/作废*/
+.send,.invalid{width:310px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:-3px 3px 5px rgba(0,0,0,0.10);position:absolute;top:110px;right:0px;z-index:4;}
+.sendTitle,.invalidTitle{height:40px;line-height:40px;text-indent:30px;font-size:14px;color:#333;background:#f9f9f7;border-bottom:1px solid #e1e1e1;overflow:hidden;}
+.sendTitle b,.invalidTitle b{width:18px;height:18px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -268px -74px;margin:11px 10px 0px 0px;cursor:pointer;}
+.sendCont,.invalidCont{margin-left:15px;}
+.sendCont p,.invalidCont p{width:250px;line-height:18px;color:#333;margin:30px 0px;}
+.sendCont a,.invalidCont a{width:106px;height:36px;line-height:36px;text-align:center;background:#d84c31;border:1px solid #c94432;border-radius:2px;display:block;color:#fff;margin-bottom:10px;}
+/*订单详情弹出*/
+.orderDetails{width:900px;height:100%;background:#f9f9f7;border-left:1px solid #e1e1e1;box-shadow:0px 0px 15px rgba(0,0,0,0.10);position:fixed;top:60px;right:0px;overflow-y:auto;display: none;}
+.detailsTitle{height:58px;line-height:58px;color:#333;font-size:16px;text-indent:20px;border-bottom:1px solid #e5e5e5;}
+.detailsTitle span{width:18px;height:18px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -268px -74px;margin:20px 25px 0px 0px;cursor:pointer;}
+.orderWrap{padding:15px 0px;border-top:1px solid #fff;border-bottom:1px solid #e1e1e1;}
+.orderWrap p{font-size:14px;color:#333;margin:0px 0px 15px 23px;}
+.orderWrap p span{font-size:12px;color:#d84c31;}
+.orderWrap dl{width:850px;background:#f5f5f2;border:1px solid #e0e0e0;margin:0px auto;}
+.orderWrap dl dt{height:44px;line-height:44px;border-bottom:1px solid #e0e0e0;overflow:hidden;font-size:14px;color:#555;}
+.orderWrap dl span{width:90px;float:left;text-align:center;}
+.orderWrap .nameTitle{width:570px;text-align:left;text-indent:40px;}
+.orderWrap dl dd{height:44px;line-height:44px;background:#f9f9f7;border-bottom:1px solid #e0e0e0;color:#545454;overflow:hidden;}
+.orderWrap .proName{width:570px;text-align:left;text-indent:10px;}
+.orderWrap .orderMoney{height:130px;background:#f5f5f2;border-bottom:none;}
+.moneyCont{float:right;}
+.moneyCont ul{border-bottom:1px solid #e0e0e0;padding:15px 0px 10px 0px;margin-right:5px;}
+.moneyCont ul li{line-height:20px;font-size:14px;color:#545454;overflow:hidden;}
+.orderWrap .moneyCont ul li span{width:100px;text-align:right;float:right;}
+.orderWrap .moneyCont ul li label{width:100px;text-align:left;float:right;}
+.moneyTotal{line-height:40px;font-size:16px;color:#545454;margin-right:50px;}
+.moneyTotal b{font-size:20px;color:#d84c31;}
+.sendWrap{border-top:1px solid #fff;padding-bottom:100px;}
+.sendWrap p{line-height:46px;font-size:14px;color:#333;text-indent:20px;}
+.sendWrap ul{border-bottom:1px solid #e1e1e1;margin-left:30px;}
+.sendWrap ul li{margin-bottom:20px;overflow:hidden;color:#545454;}
+.sendWrap ul li span{width:80px;text-align:right;float:left;margin-right:5px;}
+.sendCom,.sendNum{margin:20px 0px 0px 30px;overflow:hidden;}
+.sendCom span,.sendNum span{width:90px;line-height:30px;text-align:right;float:left;}
+.sendCom select{width:380px;height:30px;line-height:30px;background:#f9f9f7;border:1px solid #ccc;border-radius:3px;color:#545454;}
+.sendCom select:hover{background:#fff;}
+.sendNum input{width:370px;height:14px;line-height:14px;padding:7px 0px 7px 8px;background:#f9f9f7;border:1px solid #ccc;border-radius:3px;float:left;color:#545454;}
+.sendNum input:hover{background:#fff;}
+.btnSend{width:82px;height:28px;line-height:28px;text-align:center;background:#5cb85c;border:1px solid #4daf4d;border-radius:3px;color:#fff;display:block;margin:20px 0px 0px 120px;}
+/*修改订单弹出*/
+.orderMod{width:900px;height:100%;background:#f9f9f7;border-left:1px solid #e1e1e1;box-shadow:0px 0px 15px rgba(0,0,0,0.10);position:fixed;top:60px;right:0px;overflow-y:auto;display: none;}
+.modTitle{height:58px;line-height:58px;color:#333;font-size:16px;text-indent:20px;border-bottom:1px solid #e5e5e5;}
+.modTitle span{width:18px;height:18px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -268px -74px;margin:20px 25px 0px 0px;cursor:pointer;}
+.orderNumber3{height:48px;line-height:48px;text-indent:20px;border-top:1px solid #fff;color:#d84c31;}
+.orderInfor{margin:00px 0px 0px 0px;}
+.orderInfor li{margin-bottom:10px;}
+.orderMessage{font-size:14px;color:#333;margin-left:20px;}
+.orderInfor label{width:100px;line-height:30px;text-align:right;color:#545454;float:left;margin-right:10px;}
+.orderInfor label span{color:#d84c31;margin-right:5px;}
+.orderInfor input{height:14px;line-height:14px;padding:7px 0px 7px 5px;background:#f9f9f7;border:1px solid #e5e5e5;border-radius:2px;float:left;color:#545454;}
+.orderName input,.orderPhone input{width:230px;}
+.orderAdd input{width:500px;}
+.orderPlace select{height:28px;background:#f9f9f7;border:1px solid #e5e5e5;border-radius:2px;float:left;color:#545454;margin-right:10px;}
+.orderInfor select:hover{background:#fff;}
+.orderInfor input:hover{background:#fff;}
+.modList{width:850px;background:#f5f5f2;border:1px solid #e0e0e0;margin:35px auto 25px;}
+.modList dt{height:44px;line-height:44px;border-bottom:1px solid #e0e0e0;overflow:hidden;font-size:14px;color:#555;}
+.modList span{width:90px;float:left;text-align:center;}
+.modList .nameTitle2{width:570px;text-align:left;text-indent:40px;}
+.modList dd{height:44px;line-height:44px;background:#f9f9f7;border-bottom:1px solid #e0e0e0;color:#545454;overflow:hidden;}
+.modList .proName2{width:570px;text-align:left;text-indent:10px;}
+.modList .orderMoney2{height:auto;background:#f5f5f2;border-bottom:none;}
+.moneyCont2{float:right;}
+.moneyCont2 ul{border-bottom:1px solid #e0e0e0;padding:15px 0px 10px 0px;margin-right:5px;}
+.moneyCont2 ul li{line-height:20px;font-size:14px;color:#545454;overflow:hidden;margin-bottom:6px;}
+.modList .moneyCont2 ul li span{width:100px;text-align:right;float:right;line-height:20px;}
+.priceR{float:right;overflow:hidden;margin-right:15px;}
+.priceR label{float:left;line-height:20px;}
+.priceR input{width:78px;height:14px;line-height:14px;padding:2px 0px 2px 5px;border:1px solid #e0e0e0;float:left;margin:0px 5px;color:#545454;}
+.moneyTotal2{line-height:40px;font-size:16px;color:#545454;margin-right:50px;}
+.moneyTotal2 b{font-size:20px;color:#d84c31;}
+.confMod a{width:106px;height:36px;line-height:36px;text-align:center;background:#5cb85c;border:1px solid #4cae4c;border-radius:2px;color:#fff;float:right;margin-right:40px;}

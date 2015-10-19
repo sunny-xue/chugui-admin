@@ -1,0 +1,271 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>牛买网网销系统(ERP)</title>
+<link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet"/>
+<style type="text/css">
+#navL b{width:20px;height:20px;float:left;background:url(/Admin/Images/AdminIcons.png) no-repeat 0px -227px;margin:15px 10px 0px 0px;}
+#navL span{line-height:48px;font-size:20px;color:#5c6371;float:left;}
+.navBar ul{float:right;margin-right:30px;overflow:hidden;}
+.navBar ul li{float:left;}
+.navBar ul li a{height:34px;line-height:34px;padding:0px 10px;margin-top:7px;display:block;border-radius:2px;}
+.navBar ul li a:hover{background:#f2f2ea;}
+.navBar ul li a b{float:left;}
+.navBar ul li a span{float:left;font-size:14px;color:#8a959e;}
+.navBar .border{height:30px;border-left:1px solid #e5e5e5;border-right:1px solid #fff;margin:9px 20px 0px;}
+#add b{width:14px;height:14px;background:url(/Admin/Images/AdminIcons.png) no-repeat -298px -22px;margin:10px 5px 0px 0px;}
+#filter b{width:19px;height:12px;background:url(/Admin/Images/AdminIcons.png) no-repeat -382px 0px;margin:11px 5px 0px 0px;}
+#more b{width:12px;height:8px;background:url(/Admin/Images/AdminIcons.png) no-repeat -358px 0px;margin:13px 5px 0px 0px;}
+#search b{width:18px;height:18px;background:url(/Admin/Images/AdminIcons.png) no-repeat -330px 0px;margin:8px 0px 0px 0px;}
+/*账户设置margin:15px 360px 0px 235px;*/
+.account{border:1px solid #e1e1e1;background:#fbfbfb;padding:10px 30px;}
+.headImg{padding:10px 0px;border-bottom:1px solid #eee;}
+.userImg span{width:80px;height:80px;line-height:80px;text-align:center;background:#e7e7df;border-radius:50%;float:left;font-size:38px;color:#d14836;cursor:pointer;}
+.userImg span:hover{opacity:0.7;}
+.userImg p {line-height: 80px;font-size: 14px;color: #333;float: left;margin-left: 10px;}
+.btnHead{width:118px;height:36px;line-height:36px;text-align:center;background:#f9f9f7;border:1px solid #e1e1e1;border-radius:3px;display:block;font-size:14px;color:#333;margin-top:10px;}
+.data{padding:20px 0px;border-bottom:1px solid #eee;}
+.data p{font-size:14px;color:#363636;margin-bottom:20px;}
+.personName span{width:90px;line-height:48px;text-align:right;float:left;color:#363636;}
+.personName input{width:550px;height:14px;line-height:14px;padding:11px 0px 11px 5px;border:1px solid #ccc;border-radius:3px;font-size:12px;color:#ccc;margin:5px;}
+.btnSave{width:78px;height:36px;line-height:36px;text-align:center;background:#5cb85c;border:1px solid #4cae4c;border-radius:3px;color:#fff;display:block;margin:20px 0px 0px 90px;}
+/*.account input[type=text],.account input[type=password]*/{transition: border linear .2s,box-shadow linear .5s;-moz-transition: border linear .2s,-moz-box-shadow linear .5s;-webkit-transition: border linear .2s,-webkit-box-shadow linear .5s;border-color: rgba(233,50,45,.75);box-shadow: 0 0 6px rgba(250,190,190,.105);-moz-box-shadow: 0 0 6px rgba(250,190,190,.5);-webkit-box-shadow: 0 0 6px rgba(250,190,190,3);}
+.passWord{padding:20px 0px;}
+.passWord dl dt {font-size: 14px;color: #363636;margin-bottom: 20px;}
+.passWord dl dd{margin-bottom:20px;}
+.passWord dl dd span{width:90px;line-height:48px;text-align:right;float:left;color:#363636;}
+.passWord dl dd input{width:550px;height:14px;line-height:14px;padding:11px 0px 11px 5px;border:1px solid #ccc;border-radius:3px;font-size:12px;color:#ccc;margin:5px;}
+.btnConf{width:106px;height:36px;line-height:36px;text-align:center;background:#5cb85c;border:1px solid #4cae4c;border-radius:3px;color:#fff;display:block;margin-left:90px;}
+</style>
+<script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {        
+        //添加按钮
+        $("#add").mouseover(function () {
+            $(this).children("b").css("background-position", "-484px -49px");
+            $(this).children("span").css("color", "#dc4c31");
+        });
+        $("#add").mouseout(function () {
+            $(this).children("b").css("background-position", "-298px -22px");
+            $(this).children("span").css("color", "#8a959e");
+        });
+        //筛选按钮
+        $("#filter").mouseover(function () {
+            $(this).children("b").css("background-position", "-449px -49px");
+            $(this).children("span").css("color", "#dc4c31");
+        });
+        $("#filter").mouseout(function () {
+            $(this).children("b").css("background-position", "-382px 0px");
+            $(this).children("span").css("color", "#8a959e");
+        });
+        //更多按钮
+        $("#more").mouseover(function () {
+            $(this).children("b").css("background-position", "-425px -49px");
+            $(this).children("span").css("color", "#dc4c31");
+        });
+        $("#more").mouseout(function () {
+            $(this).children("b").css("background-position", "-358px 0px");
+            $(this).children("span").css("color", "#8a959e");
+        });
+        //搜索按钮
+        $("#search").mouseover(function () {
+            $(this).children("b").css("background-position", "-397px -49px");            
+        });
+        $("#search").mouseout(function () {
+            $(this).children("b").css("background-position", "-330px 0px");            
+        });
+        $("#search").click(function () {
+            if ($(this).children("b").css("background-position") == "-397px -49px") {
+                $(this).children("b").css("background-position", "-295px -74px");
+                $(this).mouseover(function () {
+                    $(this).children("b").css("background-position", "-295px -74px");
+                });
+                $(this).mouseout(function () {
+                    $(this).children("b").css("background-position", "-268px -74px");
+                });
+            } else {
+                $(this).children("b").css("background-position", "-397px -49px");
+                $(this).mouseover(function () {
+                    $(this).children("b").css("background-position", "-397px -49px");
+                });
+                $(this).mouseout(function () {
+                    $(this).children("b").css("background-position", "-330px 0px");
+                });
+            }
+        });
+        //商品列表-鼠标经过显示操作按钮
+        $(".proList").children("dd").mouseover(function () {
+            $(this).children("ul").show();
+        });
+        $(".proList").children("dd").mouseout(function () {
+            $(this).children("ul").hide();
+        });
+        //alert($(".conter").height());
+    });
+</script>
+</head>
+<body>
+<div class="head">
+    <div class="headL">牛买网ERP网销系统</div>
+    <ul class="headR">
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" id="notice">
+                <span></span>
+                <label>0</label>
+                <div class="clear"></div>
+            </a>
+        </li>
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" class="userName">
+                <span>虫</span>
+                <label>虫子</label>
+                <b></b>
+                <div class="clear"></div>
+            </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        $(window).resize(function () {
+            $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        });
+        //顶部消息通知
+        $("#notice").mouseover(function () {
+            $(this).children("span").css("background-position", "-486px 0px");
+        });
+        $("#notice").mouseout(function () {
+            $(this).children("span").css("background-position", "-466px 0px");
+        });
+        //主菜单    
+        $("#btnFold").mouseenter(function () {
+            $(this).children("b").css("background-position", "-349px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnFold").mouseout(function () {
+            $(this).children("b").css("background-position", "-211px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnHelp").mouseover(function () {
+            $(this).children("b").css("background-position", "-328px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnHelp").mouseout(function () {
+            $(this).children("b").css("background-position", "-190px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnOpen").mouseover(function () {
+            $(this).children("b").css("background-position", "-349px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnOpen").mouseout(function () {
+            $(this).children("b").css("background-position", "-211px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnFold").click(function () {//主菜单折叠
+            $("#menu").animate({ width: "80px" }, function () {
+                $("#menu").hide().css("width", "220px");
+                $("#menu2").show();
+            });            
+            $("#listBox").animate({ marginLeft: "95px" });
+            $("#navL").animate({ marginLeft: "95px" });
+        });
+        $("#btnOpen").click(function () {//主菜单展开
+            $("#menu2").animate({ width: "220px" }, function () {
+                $("#menu2").hide().css("width", "80px");
+                $("#menu").show();
+            });
+            $("#listBox").animate({ marginLeft: "235px" });
+            $("#navL").animate({ marginLeft: "235px" });
+        });        
+    });
+</script>
+<div id="menu" style="display:block;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" class="on"><b style="background: url(/Admin/Images/AdminIcons.png) 0px -21px;"></b><span>商品管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -21px 0px;"></b><span>报表统计</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -42px 0px;"></b><span>订单管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -84px 0px;"></b><span>权限管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -105px 0px;"></b><span>文章管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -126px 0px;"></b><span>商家入驻</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -147px 0px;"></b><span>广告管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -168px 0px;"></b><span>短信管理</span></a></li>
+        <li>
+            <a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span><label></label></a>
+            <dl>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -315px -199px;"></b><span>会员信息</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -339px -199px;"></b><span>分红操作</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -363px -199px;"></b><span>会员留言</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -386px -199px;"></b><span>充值提现</span></a></dd>
+            </dl>
+        </li>
+        <li class="empty"></li>
+    </ul>
+    <div class="menuBottom">
+        <div class="border"></div>
+        <div class="bottomBtns">
+            <a href="javascript:;" id="btnFold"><b></b><label style="display:none;">折叠</label></a>
+            <a href="javascript:;" id="btnHelp"><b></b><label style="display:none;">帮助中心</label></a>
+            <a href="javascript:;" id="btnSet"><b></b><label style="">系统设置</label></a>
+        </div>
+    </div>
+</div>
+<div id="menu2" style="display:none;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" class="on" title="商品管理"><b style="background: url(/Admin/Images/AdminIcons.png) -193px -140px;"></b></a></li>
+        <li><a href="javasctipt:;" title="报表统计"><b style="background: url(/Admin/Images/AdminIcons.png) -226px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="订单管理"><b style="background: url(/Admin/Images/AdminIcons.png) -259px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="会员管理"><b style="background: url(/Admin/Images/AdminIcons.png) -292px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="权限管理"><b style="background: url(/Admin/Images/AdminIcons.png) -326px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="文章管理"><b style="background: url(/Admin/Images/AdminIcons.png) -357px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="商家入驻"><b style="background: url(/Admin/Images/AdminIcons.png) -391px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="广告管理"><b style="background: url(/Admin/Images/AdminIcons.png) -424px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="短信管理"><b style="background: url(/Admin/Images/AdminIcons.png) -460px -106px;"></b></a></li>
+        <li class="empty"></li>
+    </ul>    
+    <div class="menu2Bottom">
+        <div class="border"></div>
+        <div class="bottom2Btns">
+            <a href="javascript:;" id="btnOpen"><b></b><label style="display:none;">展开</label></a>
+        </div>
+    </div>
+</div>
+<div class="main">    
+    <div class="navBar">
+        <div id="navL" style="margin-left:235px;"><b></b><span>账户设置</span></div>
+        <div class="clear"></div>
+    </div>
+    <div id="conter">
+        <div id="listBox" style="margin-left:235px;margin-right:15px;">
+            <div class="account">
+                <div class="headImg">
+                    <div class="userImg"><span>虫</span><p>你可以选择png/jpg图片（180*180）作为头像</p><div class="clear"></div></div>
+                    <a href="javascript:;" class="btnHead">修改头像</a>
+                </div>
+                <div class="data">
+                    <p>修改个人资料</p>
+                    <div class="personName"><span>用户名：</span><input type="text" value="用户名"/><div class="clear"></div></div>
+                    <a href="javacript:;" class="btnSave">保存</a>
+                </div>
+                <div class="passWord">
+                    <dl>
+                        <dt>修改密码</dt>
+                        <dd><span>原密码：</span><input type="password" value="原密码"/><div class="clear"></div></dd>
+                        <dd><span>新密码：</span><input type="password" value="新密码"/><div class="clear"></div></dd>
+                        <dd><span>重复密码：</span><input type="password" value="再输入一次"/><div class="clear"></div></dd>
+                        <dd><a href="javascript:;" class="btnConf">确认修改</a></dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

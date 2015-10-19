@@ -1,0 +1,1106 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title></title>
+<link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet"/>
+<link type="text/css" href="/Admin/Css/AdManage.css" rel="stylesheet"/>
+<script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        $(window).resize(function () {
+            $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        });
+    });
+</script>
+</head>
+<body>
+<div class="head">
+    <div class="headL">牛买网ERP网销系统</div>
+    <ul class="headR">
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" id="notice">
+                <span></span>
+                <label>0</label>
+                <div class="clear"></div>
+            </a>
+        </li>
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" class="userName">
+                <span>虫</span>
+                <label>虫子</label>
+                <b></b>
+                <div class="clear"></div>
+            </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+<div id="menu">
+    <ul>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) 0px 0px;"></b><span>商品管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -21px 0px;"></b><span>报表统计</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -42px 0px;"></b><span>订单管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -84px 0px;"></b><span>权限管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -105px 0px;"></b><span>文章管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -126px 0px;"></b><span>商家入驻</span></a></li>
+        <li><a href="javasctipt:;" class="on"><b style="background: url(/Admin/Images/AdminIcons.png) -147px -21px;"></b><span>广告管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -168px 0px;"></b><span>短信管理</span></a></li>
+    </ul>
+    <div class="menuBottom">
+        <div class="border"></div>
+        <div class="bottomBtns">
+            <a href="javascript:;" id="btnFold"><b></b><label>折叠</label></a>
+            <a href="javascript:;" id="btnHelp"><b></b><label style="display:none;">帮助中心</label></a>
+        </div>
+    </div>
+</div>
+<div class="main">
+    <div class="navBar">
+        <div id="navL" style="margin-left:235px;"><b></b><span>广告管理</span></div>
+        <div class="clear"></div>
+    </div>
+    <div id="conter">
+        <div id="listBox" style="margin-left:210px;margin-right:360px;">
+            <div class="adManage">
+                <div class="manageTitle">
+                    <p>广告位</p>
+                    <div class="check"><a href="javascript:;" class="on">主站</a><a href="javascript:;">分站</a></div>
+                </div>
+                <div class="adCont">
+                    <div class="bannerAd">
+                        <div class="bannerL">
+                            <p><span>商品分类广告位</span><b></b></p>
+                            <!--<label><a href="javascript:;"></a></label>-->   <!--bannerL鼠标经过p隐藏 label显示-->
+                        </div>
+                        <div class="bannerR">
+                            <p><span>焦点图最少五张</span><b></b></p>
+                            <!--<label><a href="javascript:;"></a></label>-->    <!--bannerR鼠标经过p隐藏label显示-->
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="sale">
+                        <p class="saleTitle">牛品特惠</p>
+                        <div class="saleCont">
+                            <div class="saleL">
+                                <div class="saleLL">
+                                    <!--<p>牛品特惠广告图</p>-->
+                                    <label><a href="javascript:;"></a></label>    <!--saleLL鼠标经过效果-->
+                                </div>
+                                <div class="saleLR">
+                                    <ul>
+                                        <li>
+                                            <p>牛品特惠广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </li>
+                                        <li>
+                                            <p>牛品特惠广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </li>
+                                        <li>
+                                            <p>牛品特惠广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </li>
+                                        <li>
+                                            <p>牛品特惠广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </li>
+                                        <li>
+                                            <p>牛品特惠广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </li>
+                                        <li>
+                                            <p>牛品特惠广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="saleR">
+                                <div class="saleRL">
+                                    <p>牛品特惠广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->    <!--saleLL鼠标经过效果-->
+                                </div>
+                                <div class="saleRR">
+                                    <ul>
+                                        <li>
+                                            <p>牛品特惠广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </li>
+                                        <li>
+                                            <p>牛品特惠广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="adEditor">
+                        <p>广告位</p>
+                        <!--<label><a href="javascript:;"></a></label>-->
+                    </div>
+                    <div class="floor1">
+                        <p class="floorTitle">1F家用电器</p>
+                        <div class="floorCont">
+                            <div class="floorL">
+                                <div class="floorLU">
+                                    <p>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                    </p>
+                                </div>
+                                <div class="floorLM"><p>文字广告位</p></div>
+                                <div class="floorLD">
+                                    <p>家用电器广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="floorR">
+                                <div class="floorRU">
+                                    <div class="floorRL">
+                                        <div class="floorUL">
+                                            <p>家用电器广告图最少三张</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorUR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="floorRR">
+                                        <div class="floorDL">
+                                            <p>家用电器广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorDR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="floorRD">
+                                    <p>品牌logo最少十二张</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="floor1">
+                        <p class="floorTitle">2F母婴玩具</p>
+                        <div class="floorCont">
+                            <div class="floorL">
+                                <div class="floorLU">
+                                    <p>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                    </p>
+                                </div>
+                                <div class="floorLM"><p>文字广告位</p></div>
+                                <div class="floorLD">
+                                    <p>家用电器广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="floorR">
+                                <div class="floorRU">
+                                    <div class="floorRL">
+                                        <div class="floorUL">
+                                            <p>家用电器广告图最少三张</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorUR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="floorRR">
+                                        <div class="floorDL">
+                                            <p>家用电器广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorDR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="floorRD">
+                                    <p>品牌logo最少十二张</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="floor1">
+                        <p class="floorTitle">3F居家生活</p>
+                        <div class="floorCont">
+                            <div class="floorL">
+                                <div class="floorLU">
+                                    <p>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                    </p>
+                                </div>
+                                <div class="floorLM"><p>文字广告位</p></div>
+                                <div class="floorLD">
+                                    <p>家用电器广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="floorR">
+                                <div class="floorRU">
+                                    <div class="floorRL">
+                                        <div class="floorUL">
+                                            <p>家用电器广告图最少三张</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorUR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="floorRR">
+                                        <div class="floorDL">
+                                            <p>家用电器广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorDR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="floorRD">
+                                    <p>品牌logo最少十二张</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="adEditor">
+                        <p>广告位</p>
+                        <!--<label><a href="javascript:;"></a></label>-->
+                    </div>
+                    <div class="floor1">
+                        <p class="floorTitle">4F食品生鲜</p>
+                        <div class="floorCont">
+                            <div class="floorL">
+                                <div class="floorLU">
+                                    <p>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                    </p>
+                                </div>
+                                <div class="floorLM"><p>文字广告位</p></div>
+                                <div class="floorLD">
+                                    <p>家用电器广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="floorR">
+                                <div class="floorRU">
+                                    <div class="floorRL">
+                                        <div class="floorUL">
+                                            <p>家用电器广告图最少三张</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorUR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="floorRR">
+                                        <div class="floorDL">
+                                            <p>家用电器广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorDR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="floorRD">
+                                    <p>品牌logo最少十二张</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="floor1">
+                        <p class="floorTitle">5F个护美妆</p>
+                        <div class="floorCont">
+                            <div class="floorL">
+                                <div class="floorLU">
+                                    <p>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                    </p>
+                                </div>
+                                <div class="floorLM"><p>文字广告位</p></div>
+                                <div class="floorLD">
+                                    <p>家用电器广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="floorR">
+                                <div class="floorRU">
+                                    <div class="floorRL">
+                                        <div class="floorUL">
+                                            <p>家用电器广告图最少三张</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorUR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="floorRR">
+                                        <div class="floorDL">
+                                            <p>家用电器广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorDR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="floorRD">
+                                    <p>品牌logo最少十二张</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="floor1">
+                        <p class="floorTitle">6F营养保健</p>
+                        <div class="floorCont">
+                            <div class="floorL">
+                                <div class="floorLU">
+                                    <p>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                    </p>
+                                </div>
+                                <div class="floorLM"><p>文字广告位</p></div>
+                                <div class="floorLD">
+                                    <p>家用电器广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="floorR">
+                                <div class="floorRU">
+                                    <div class="floorRL">
+                                        <div class="floorUL">
+                                            <p>家用电器广告图最少三张</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorUR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="floorRR">
+                                        <div class="floorDL">
+                                            <p>家用电器广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorDR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="floorRD">
+                                    <p>品牌logo最少十二张</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="adEditor">
+                        <p>广告位</p>
+                        <!--<label><a href="javascript:;"></a></label>-->
+                    </div>
+                    <div class="floor1">
+                        <p class="floorTitle">7F运动健身</p>
+                        <div class="floorCont">
+                            <div class="floorL">
+                                <div class="floorLU">
+                                    <p>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                        <label>文字广告位</label>
+                                    </p>
+                                </div>
+                                <div class="floorLM"><p>文字广告位</p></div>
+                                <div class="floorLD">
+                                    <p>家用电器广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="floorR">
+                                <div class="floorRU">
+                                    <div class="floorRL">
+                                        <div class="floorUL">
+                                            <p>家用电器广告图最少三张</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorUR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="floorRR">
+                                        <div class="floorDL">
+                                            <p>家用电器广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorDR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="floorRD">
+                                    <p>品牌logo最少十二张</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="floor1">
+                        <p class="floorTitle">8F手机通讯</p>
+                        <div class="floorCont">
+                            <div class="floorL">
+                                <div class="floorLU">
+                                    <!--<p>文字广告位最少八个</p>-->
+                                    <label><a href="javascript:;"></a></label>
+                                </div>
+                                <div class="floorLM">
+                                    <p>文字广告位</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                                <div class="floorLD">
+                                    <p>家用电器广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="floorR">
+                                <div class="floorRU">
+                                    <div class="floorRL">
+                                        <div class="floorUL">
+                                            <p>家用电器广告图最少三张</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorUR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="floorRR">
+                                        <div class="floorDL">
+                                            <p>家用电器广告图</p>
+                                            <!--<label><a href="javascript:;"></a></label>-->
+                                        </div>
+                                        <div class="floorDR">
+                                            <ul>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                                <li>
+                                                    <p>家用电器广告图</p>
+                                                    <!--<label><a href="javascript:;"></a></label>-->
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="clear"></div>
+                                    </div>
+                                    <div class="clear"></div>
+                                </div>
+                                <div class="floorRD">
+                                    <p>品牌logo最少十二张</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="recom">
+                        <p class="recomTitle">精心推荐</p>
+                        <div class="recomCont">
+                            <p></p>
+                            <!--<label><a href="javascript:;"></a></label>-->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="contR">
+            <div class="userBox">
+                <div class="name">
+                    <span>虫</span>
+                    <div class="time"><p>虫子, 下午好！起来运动一下</p><label>今天是 星期六，2015年04月11日</label></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="numBox">
+                    <a href="#" class="current"><span>1500</span><label>当前数量</label></a>
+                    <a href="#" class="shelves"><span>1200</span><label>已上架数量</label></a>
+                    <a href="#" class="promotion"><span>35</span><label>活动商品</label></a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="message">
+                <div class="messTitle"><b></b><span>信息通告</span></div>
+                <div class="messCont"><b></b></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="adAlert" style="display:none;">
+    <div class="alertTitle">广告编辑<span></span></div>
+    <div class="local">
+        <ul>
+            <li>
+                <span>当前位置：</span>
+                <label><a href="javascript:;">广告管理 </a> > 广告编辑</label>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>广告名称：</span>
+                <input/>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>广告类型：</span>
+                <label>幻灯片广告</label>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>广告图片：</span>
+                <div class="shopPic">
+                    <div class="pic">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <a href="javascript:;" class="btnChoose">
+                        <b></b>
+                        <i>选择图片</i>
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>图片链接：</span>
+                <input/>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="tag">
+        <a href="javascript:;" class="btnConf">确定</a>
+        <a href="javascript:;" class="btnConti">确定并继续</a>
+    </div>
+</div>
+<div class="classAd" style="display:none;">
+    <div class="classTitle">商品分类广告位<span></span></div>
+    <div class="classCont">
+        <dl>
+            <dt>一级分类</dt>
+            <dd class="one on">
+                <span>家用电器</span>
+                <div class="classBtns">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>手机、数码</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>电脑办公</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>家居、家具、家装、厨具</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>男装、女装、内衣</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>个护美妆</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div> 
+            </dd>
+            <dd>
+                <span>鞋帽、箱包、钟表</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>运动户外</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>整车、汽车用品</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>母婴、玩具乐器</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>食品饮料、酒类、生鲜</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>营养保健</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>珠宝、奢侈品</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd class="border"></dd>
+            <dd class="classText"><input type="text" value="广告名称"/></dd>
+            <dd class="classText"><input type="text" value="广告链接"/></dd>
+            <dd class="classBtns2">
+                <a href="javascript:;" class="btnConf">确定</a>
+                <a href="javascript:;" class="btnRemove">取消</a>
+                <div class="clear"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt>二级分类</dt>
+            <dd class="one on">
+                <span>家用电器</span>
+                <div class="classBtns">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>手机、数码</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>电脑办公</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>整车、汽车用品</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd class="border"></dd>
+            <dd class="adImg">
+                <span><img/></span>
+                <span><img/></span>
+                <span><img/></span>
+                <span><img/></span>
+            </dd>
+            <dd class="chooseImg"><a href="javascript:;">选择图片</a></dd>
+            <dd class="border"></dd>
+            <dd class="classText"><input type="text" value="广告名称"/></dd>
+            <dd class="classText"><input type="text" value="广告链接"/></dd>
+            <dd class="classBtns2">
+                <a href="javascript:;" class="btnConf">确定</a>
+                <a href="javascript:;" class="btnRemove">取消</a>
+                <div class="clear"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt>三级分类<span></span></dt>
+            <dd class="one on">
+                <span>家用电器</span>
+                <div class="classBtns">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>手机、数码</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>电脑办公</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>家居、家具、家装、厨具</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>男装、女装、内衣</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>个护美妆</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div> 
+            </dd>
+            <dd>
+                <span>鞋帽、箱包、钟表</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>运动户外</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>整车、汽车用品</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>母婴、玩具乐器</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>食品饮料、酒类、生鲜</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>营养保健</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>珠宝、奢侈品</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd class="border"></dd>
+            <dd class="classText"><input type="text" value="广告名称"/></dd>
+            <dd class="classText"><input type="text" value="广告链接"/></dd>
+            <dd class="classBtns2">
+                <a href="javascript:;" class="btnConf">确定</a>
+                <a href="javascript:;" class="btnRemove">取消</a>
+                <div class="clear"></div>
+            </dd>
+        </dl>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+</html>

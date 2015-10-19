@@ -1,0 +1,173 @@
+﻿body,div,p,a,span,label,input,select,textarea,ul,li,dl,dt,dd,h1,h2{margin:0px;padding:0px;}
+body{font-size:12px;font-family:Microsoft YaHei;color:#666;}
+li{list-style:none;}
+img{border:none;}
+a{text-decoration:none;}
+input{outline:none;}
+button{outline:none;}
+select{outline:none;}
+textarea{outline:none;}
+.clear{clear:both;}
+/*头部*/
+.head{width:100%;height:60px;line-height:60px;background:#393939;position:fixed;top:0px;left:0px;z-index:2;}
+.headL{float:left;font-size:16px;color:#aeb2b7;padding-left:20px;}
+.headR{float:right;overflow:hidden;}
+.headR li{float:left;}
+.headR li a{height:60px;display:block;overflow:hidden;}
+.headR .border{width:2px;height:60px;background:url(/Admin/Images/AdminIcons.png) no-repeat 0px -47px;}
+#notice{width:80px;}
+#notice:hover{background:#424242;}
+#notice span{width:14px;height:16px;background:url(/Admin/Images/AdminIcons.png) no-repeat -466px 0px;float:left;margin:23px 10px 0px 20px;}
+#notice label{width:16px;height:16px;float:left;line-height:16px;background:#aaa;border-radius:1px;text-align:center;margin:22px 0px 0px 0px;color:#777;}
+.userName{width:120px;}
+.userName span{width:30px;height:30px;line-height:30px;text-align:center;float:left;background:url(/Admin/Images/AdminIcons.png) -221px -47px;margin:15px 10px 0px 15px;font-size:18px;color:#da4c31;}
+.userName label{float:left;color:#aaa;}
+.userName b{width:8px;height:4px;float:left;background:url(/Admin/Images/AdminIcons.png) -449px -1px;margin:29px 0px 0px 10px;}
+/*菜单栏*/
+#menu{width:220px;height:100%;background:#393939;position:fixed;left:0px;bottom:0px;z-index:1;}
+#menu ul{height:100%;overflow-y:auto;overflow-x:hidden;}
+#menu ul li.empty{height:60px;}
+#menu ul li a{width:220px;height:50px;line-height:50px;display:block;overflow:hidden;}
+#menu ul li a:hover{background:#424242;}
+#menu .on{background:#424242;}
+#menu .on span{color:#ce4c38;}
+#menu ul li a b{width:16px;height:16px;float:left;margin:17px 12px 0px 20px;}
+#menu ul li a span{float:left;font-size:14px;color:#aeb2b7;}
+#menu ul li a label{width:11px;height:11px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -231px -200px;margin:20px 20px 0px 0px;}
+/*鼠标经过label变色   {width:11px;height:11px;float:right;background:url(/Admin/Images/AdminIons.png) no-repeat -247px -200px;}
+点击后菜单展开label换图标  {width:11px;height:11px;float:right;background:url(/Admin/Images/AdminIons.png) no-repeat -289px -200px;}
+展开时鼠标经过label变色  {width:11px;height:11px;float:right;background:url(/Admin/Images/AdminIons.png) no-repeat -266px -200px;}*/
+#menu ul li dl{background:#282823;}
+/*鼠标经过 dl dd a span{color:#ce4c38;}*/
+.menuBottom{height:40px;position:fixed;bottom:0px;left:0px;background:#393939;}
+.menuBottom .border{width:220px;border-top:1px solid #111415;border-bottom:1px solid #646668;}
+.bottomBtns{padding:0px 20px;}
+.bottomBtns a{width:60px;height:38px;float:right;}
+.bottomBtns a b{width:12px;height:12px;display:block;}
+.bottomBtns a label{height:30px;line-height:25px;text-align:center;font-size:14px;color:#aeb2b7;display:block;position:absolute;}
+#btnFold b{background:url(/Admin/Images/AdminIcons.png) no-repeat -211px -21px;margin:13px 0px 0px 25px;}
+#btnHelp b{background:url(/Admin/Images/AdminIcons.png) no-repeat -190px -21px;margin:12px 0px 0px 25px;}
+#btnSet b{background:url(/Admin/Images/AdminIcons.png) no-repeat -106px -206px;margin:13px 0px 0px 25px;}
+#btnFold label{width:44px;background:url(/Admin/Images/AdminIcons.png) no-repeat -59px -129px;margin:-56px 0px 0px 9px;}
+#btnHelp label{width:72px;background:url(/Admin/Images/AdminIcons.png) no-repeat -111px -129px;margin:-55px 0px 0px -5px;}
+#btnSet label{width:72px;background:url(/Admin/Images/AdminIcons.png) no-repeat -111px -129px;margin:-55px 0px 0px -5px;}
+/*菜单栏折叠*/
+#menu2{width:80px;height:100%;background:#393939;position:fixed;bottom:0px;left:0px;z-index:1;}
+#menu2 ul{height:100%;overflow-y:auto;overflow-x:hidden;}
+#menu2 ul li.empty{height:60px;}
+#menu2 ul li a{width:80px;height:50px;display:block;overflow:hidden;}
+#menu2 ul li a:hover{background:#424242;}
+#menu2 ul li a b{width:24px;height:22px;display:block;margin:13px auto 0px auto;}
+#menu2 .on{background:#424242;}
+.menu2Bottom{height:40px;position:fixed;bottom:0px;left:0px;background:#393939;}
+.menu2Bottom .border{width:80px;border-top:1px solid #111415;border-bottom:1px solid #646668;}
+.bottom2Btns{padding:0px 5px;}
+.bottom2Btns a{width:30px;height:38px;}
+#btnOpen b{width:12px;height:12px;display:block;background:url(/Admin/Images/AdminIcons.png) no-repeat -211px -21px;margin:13px 0px 0px 25px;}
+#btnOpen label{width:44px;height:30px;line-height:25px;text-align:center;display:block;background:url(/Admin/Images/AdminIcons.png) no-repeat -59px -129px;font-size:14px;color:#aeb2b7;position:absolute;margin:-56px 0px 0px 9px;}
+/*主体*/
+.main{width:100%;height:100%;position:fixed;top:0px;left:0px;background:#f9f9f7;}
+.navBar{width:100%;border-bottom:1px solid #e1e1e1;margin-top:60px;}
+#conter{width:100%;overflow:auto;}
+#listBox{margin-top:15px;}
+#navL{float:left;overflow:hidden;}
+/*我的账户弹出*/
+.myAccount{width:200px;background:#f9f9f7;border:1px solid #e1e1e1;box-shadow:-3px 3px 5px rgba(0,0,0,0.10);position:absolute;top:60px;right:15px;z-index:3;}
+.accountTitle{height:40px;line-height:40px;text-indent:30px;font-size:14px;color:#333;background:#f9f9f7;border-bottom:1px solid #e1e1e1;overflow:hidden;}
+.accountTitle b{width:18px;height:18px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -268px -74px;margin:11px 10px 0px 0px;cursor:pointer;}
+.myAcount ul{background:#fbfbfb;}
+.myAccount ul li{border-bottom:1px solid #e1e1e1;}
+.myAccount ul li a{width:190px;height:32px;line-height:32px;margin:9px auto;color:#333;display:block;overflow:hidden;}
+.myAccount ul li a:hover{background:#f2f2ea;color:#d14836;}
+.myAccount ul li a b{width:13px;height:13px;float:left;margin:10px 8px 0px 30px;}
+.set b{background:url(/Admin/Images/AdminIcons.png) no-repeat -471px -177px;}
+/*.set鼠标经过 .set b{background:url(/Admin/Images/AdminIcons.png) no-repeat -443px -177px;}*/
+.help b{background:url(/Admin/Images/AdminIcons.png) no-repeat -188px -200px;}
+/*.help鼠标经过 .help b{background:url(/Admin/Images/AdminIcons.png) no-repeat -209px -177px;}*/
+.myAccount .border{height:auto;border-bottom:1px solid #fff;}
+.btnOut{width:78px;height:28px;line-height:28px;text-align:center;background:#d84c31;border:1px solid #c94432;border-radius:2px;color:#fff;display:block;margin:10px 0px 10px 105px;}
+
+
+.manageTitle{overflow:hidden;border-bottom:1px solid #e1e1e1;margin:0px 15px;padding-top:10px;}
+.manageTitle p{font-size:18px;color:#646b75;text-indent:5px;float:left;}
+
+/*带图标的导航**/
+.navBar ul{float:right;margin-right:30px;overflow:hidden;}
+.navBar ul li{float:left;}
+.navBar ul li a{height:34px;line-height:34px;padding:0px 10px;margin-top:7px;display:block;border-radius:2px;}
+.navBar ul li a:hover{background:#f2f2ea;}
+.navBar ul li a b{float:left;}
+.navBar ul li a span{float:left;font-size:14px;color:#8a959e;}
+.navBar .border{height:30px;border-left:1px solid #e5e5e5;border-right:1px solid #fff;margin:9px 20px 0px;}
+
+.add-icon b{width:14px;height:14px;background:url(/Admin/Images/AdminIcons.png) no-repeat -298px -22px;margin:10px 5px 0px 0px;}
+.filter-icon b{width:19px;height:12px;background:url(/Admin/Images/AdminIcons.png) no-repeat -382px 0px;margin:11px 5px 0px 0px;}
+.more-icon b{width:12px;height:8px;background:url(/Admin/Images/AdminIcons.png) no-repeat -358px 0px;margin:13px 5px 0px 0px;}
+.search-icon b{width:18px;height:18px;background:url(/Admin/Images/AdminIcons.png) no-repeat -330px 0px;margin:8px 0px 0px 0px;}
+
+/**复选框样式**/
+.check{float:left;margin-left:80px;overflow:hidden;}
+.check a{margin-right:60px;font-size:16px;color:#8a959e;float:left;padding-bottom:12px;margin-top:4px;}
+.check a:hover{color:#323a45;}
+.check a.on{color:#323a45;border-bottom:2px solid #d84c31;}
+
+/*分页页码样式*/
+.pagesList{height:40px;padding:10px 0px;}
+.pagesCont{width:550px;height:40px;padding:10px 0px;margin:0px auto;}
+.pagesCont a{height:28px;line-height:28px;border:1px solid #c1c1c1;border-radius:5px;font-size:14px;color:#666;float:left;padding:0px 11px;margin-right:8px;}
+.pagesCont .pagesPrev{width:28px;background:url(/Admin/Images/AdminIcons.png) no-repeat -144px -170px;padding:0px;}
+/*.pagesCont .pagesNext 点不动时变灰色{background:url(/Admin/Images/AdminIcons.png) no-repeat -186px -170px;}*/
+.pagesCont .pagesPrev:hover{background:#d94c30 url(/Admin/Images/AdminIcons.png) no-repeat -165px -170px;}
+.pagesCont .pagesNext{width:28px;background:url(/Admin/Images/AdminIcons.png) no-repeat -249px -170px;padding:0px;}
+/*.pagesCont .pagesNext 点不动时变灰色{background:url(/Admin/Images/AdminIcons.png) no-repeat -207px -170px;}*/
+.pagesCont .pagesNext:hover{background:#d94c30 url(/Admin/Images/AdminIcons.png) no-repeat -228px -170px;}
+.pagesCont label{line-height:28px;float:left;padding:0px 10px 0px 2px;}
+.pagesCont input{width:65px;height:14px;line-height:14px;float:left;padding:7px 0px;border:1px solid #c1c1c1;border-radius:5px;text-align:center;margin:0px 3px 0px 20px;background:#fbfbfb;}
+.pagesCont .jump{background:#d94c30;color:#fff;border:1px solid #d94c30;}
+.pagesCont .jump:hover{background:#b82609;}
+.pagesList a:hover{background:#d94c30;color:#fff;border:1px solid #cc402b;}
+.loadMore{width:150px;height:38px;line-height:38px;text-align:center;background:#f9f9f7;border:1px solid #e1e1e1;border-radius:3px;font-size:14px;color:#666;display:block;margin:50px auto 40px;}
+
+/*右侧*/
+.userBox{padding:15px;margin-bottom:15px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:0px 0px 3px #eee,inset 0px 0px 3px #fff;}
+.name{margin-bottom:15px;border-bottom:1px solid #e1e1e1;padding-bottom:15px;}
+.name span{width:50px;height:50px;background:url(/Admin/Images/AdminIcons.png) no-repeat -160px -47px;float:left;text-align:center;line-height:50px;font-size:24px;color:#d84c31;}
+.time{float:left;line-height:25px;margin-left:10px;}
+.time p{font-size:14px;color:#323a45;}
+.time label{display:block;color:#8a959e;}
+.numBox{overflow:hidden;}
+.numBox a{width:33%;float:left;border-right:1px solid #e1e1e1;text-align:center;}
+.numBox .promotion{border-right:none;}
+.numBox a span{font-size:20px;line-height:28px;display:block;}
+.numBox a label{font-size:14px;line-height:28px;display:block;color:#646b75;}
+.current span{color:#f7af49;}
+.shelves span{color:#f47a55;}
+.promotion span{color:#88b244;}
+.message{padding:15px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:0px 0px 3px #eee,inset 0px 0px 3px #fff;}
+.messTitle{padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid #e1e1e1;overflow:hidden;}
+.messTitle b{width:25px;height:17px;background:url(/Admin/Images/AdminIcons.png) no-repeat -413px 0px;float:left;margin:3px 10px 0px 0px;}
+.messTitle span{font-size:18px;color:#646b75;float:left;}
+.messCont b{width:128px;height:62px;background:url(/Admin/Images/AdminIcons.png) no-repeat -10px -46px;display:block;margin:30px auto 20px;}
+/*筛选项弹出*/
+.filterMain{width:600px;height:100%;background:#f9f9f7;border-left:1px solid #e1e1e1;box-shadow:0px 0px 15px rgba(0,0,0,0.10);position:fixed;top:60px;right:0px;overflow-y:auto;}
+.filterTitle{height:58px;line-height:58px;color:#333;font-size:16px;text-indent:20px;border-bottom:1px solid #e5e5e5;}
+.filterTitle span{width:18px;height:18px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -268px -74px;margin:20px 25px 0px 0px;cursor:pointer;}
+.filterCont{border-top:1px solid #fff;}
+.filterCont ul{margin:20px 0px 0px 0px;}
+.filterCont ul li{margin-bottom:20px;}
+.filterCont ul li span{width:100px;float:left;text-align:right;line-height:38px;margin-right:15px;font-size:14px;color:#333;}
+.filterCont ul li select{width:400px;height:38px;line-height:38px;background:#f9f9f7;border:1px solid #ddd;border-radius:2px;float:left;}
+.filterCont select:hover{background:#fff;}
+.filterCont input{width:393px;height:14px;padding:11px 0px 11px 5px;background:#f9f9f7;border:1px solid #ddd;border-radius:2px;float:left;}
+.filterCont input:hover{background:#fff;}
+.date a{width:17px;height:14px;position:absolute;background:url(/Admin/Images/AdminIcons.png) no-repeat -457px -77px;float:left;margin:12px 0px 0px -25px;}
+.filterBtns a{width:80px;height:30px;line-height:30px;text-align:center;float:left;border-radius:4px;}
+.btnFilter{background:#5cb85c;border:1px solid #4cae4c;color:#fff;margin:0px 20px 0px 115px;}
+.btnRemove{background:#f9f9f7;border:1px solid #e1e1e1;color:#333;}
+.btnRemove:hover{background:#5cb85c;border:1px solid #4cae4c;color:#fff;}
+/*商品管理"更多"弹出*/
+.more{width:150px;padding:10px 5px;background:#fbfbfb;border:1px solid #e1e1e1;position:absolute;right:0px;top:0px;margin:110px 70px 0px 0px;z-index:3;}
+.more dd{width:150px;height:40px;margin:0px auto;}
+.navBar .more dd a{width:100%;height:100%;line-height:40px;overflow:hidden;display:block;font-size:14px;color:#8a959e;margin:0px;padding:0px;}
+.more dd a:hover{background:#f2f2ea;}
+.more dd a b{width:16px;height:16px;float:left;margin:12px 10px 0px 20px;}

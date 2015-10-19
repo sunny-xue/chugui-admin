@@ -1,0 +1,10 @@
+/*登录样式*/
+.top img{width:100%;}
+.main{width:100%;}
+.main ul{width:360px;margin:80px auto;}
+.main ul li{margin-bottom:20px;overflow:hidden;}
+.main ul li span{width:40px;height:38px;float:left;border:1px solid #ccc;border-top-left-radius:3px;border-bottom-left-radius:3px;}
+.main ul li input{width:300px;height:16px;line-height:16px;padding:11px 0px 11px 5px;float:left;background:#f9f9f9;border:1px solid #d9d9d9;border-left:none;border-top-right-radius:3px;border-bottom-right-radius:3px;color:#ccc;}
+.user span{background:#eee url(/Admin/Images/AdminIcons.png) no-repeat 0px -120px;}
+.psd span{background:#eee url(/Admin/Images/AdminIcons.png) no-repeat 0px -164px;}
+.btnLogin a{width:346px;height:38px;line-height:38px;background:#5cb85c;border:1px solid #4cae4c;border-radius:3px;display:block;text-align:center;font-size:16px;color:#fff;letter-spacing:5px;}

@@ -1,0 +1,342 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>牛买网网销系统(ERP)</title>
+<link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet"/>
+<style type="text/css">
+/*报表统计*/
+#conter{margin-top:60px;}
+.formCont{margin-top:20px;}
+.formHead{overflow:hidden;}
+.formHead li{width:23%;float:left;overflow:hidden;margin-right:20px;}
+.left{width:37%;height:100px;float:left;background:#f7af49;}
+.right{width:63%;height:100px;float:left;background:#fff;position:relative;}
+.left b{width:62px;height:54px;display:block;margin:25px auto 0px;}
+.saleNum .left{background:#f47a55;}
+.saleMoney .left{background:#88b244;}
+.shareNum .left{background:#3c8cad;}
+.memNum b{background:url(/Admin/Images/FormNum.png) no-repeat 0px 0px;}
+.saleNum b{background:url(/Admin/Images/FormNum.png) no-repeat -74px 0px;}
+.saleMoney b{background:url(/Admin/Images/FormNum.png) no-repeat -142px 0px;}
+.shareNum b{background:url(/Admin/Images/FormNum.png) no-repeat -215px 0px;}
+.right i{width:75px;height:35px;display:block;position:absolute;bottom:15px;right:10px;}
+.memNum i{background:url(/Admin/Images/FormNum.png) no-repeat 0px -63px;}
+.saleNum i{background:url(/Admin/Images/FormNum.png) no-repeat -81px -63px;}
+.saleMoney i{background:url(/Admin/Images/FormNum.png) no-repeat -163px -63px;}
+.shareNum i{background:url(/Admin/Images/FormNum.png) no-repeat -251px -63px;}
+.right p{font-size:14px;color:#333;margin:15px 0px 0px 15px;}
+.right p span{font-family:"方正兰亭纤黑_GBK";font-size:30px;color:#f47a55;display:block;}
+.sales{height:320px;background:#fff;margin:20px 0px;}
+.salesL{float:left;}
+.salesR{width:420px;float:right;font-family:"方正兰亭纤黑_GBK";margin-top:25px;}
+.salesR ul li{width:188px;height:118px;float:left;margin:0px 10px 10px 0px;}
+.salesR ul li span{font-size:34px;display:block;text-align:center;margin-top:25px;}
+.salesR ul li p{font-size:14px;text-align:center;}
+.sales1 span,.sales4 span{color:#333;}
+.sales1 p,.sales4 p{color:#333;}
+.sales2 span,.sales3 span{color:#fff;}
+.sales2 p,.sales3 p{color:#fff;}
+.sales1,.sales4{border:1px solid #ccc;}
+.sales2{background:#ffb80c;border:1px solid #ffb80c;}
+.sales3{background:#f47a55;border:1px solid #f47a55;}
+.saleForm{overflow:hidden;}
+.saleData{width:60%;height:370px;float:left;background:#fff;}
+.dataL{width:60%;float:left;}
+.dataR{width:35%;float:right;font-family:"方正兰亭纤黑_GBK";margin:100px 20px 0px 0px;}
+.dataR dt{border-bottom:1px solid #ccc;overflow:hidden;}
+.dataR dt span{line-height:30px;font-size:18px;color:#333;float:left;}
+.dataR dt a{line-height:30px;color:#d84c31;float:right;}
+.dataR dd{height:40px;line-height:40px;border-bottom:1px solid #ccc;}
+.dataR dd span{width:20px;height:20px;line-height:20px;text-align:center;float:left;background:#f0f1f3;border-radius:3px;color:#333;margin:10px 10px 0px 4px;}
+.dataR dd p{font-size:14px;color:#333;float:left;}
+.dataR dd a{width:78px;height:25px;line-height:25px;text-align:center;float:left;background:#f0f1f3;border-radius:3px;color:#aeb2b7;float:right;margin:7px 4px 0px 0px;}
+.saleOrder{width:38%;height:370px;float:right;background:#fff;}
+</style>
+<script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $(".dataR").children("dl").children("dd").mouseover(function () {
+            $(this).children("span").css("background", "#d84c31");
+            $(this).children("span").css("color", "#fff");
+            $(this).children("p").css("color", "#d84c31");
+            $(this).children("a").css("color", "#fff");
+            $(this).children("a").css("background", "#333");
+        });
+        $(".dataR").children("dl").children("dd").mouseout(function () {
+            $(this).children("span").css("background", "#f0f1f3");
+            $(this).children("span").css("color", "#333");
+            $(this).children("p").css("color", "#333");
+            $(this).children("a").css("color", "#aeb2b7");
+            $(this).children("a").css("background", "#f0f1f3");
+        });
+    });
+</script>
+</head>
+<body>
+<div class="head">
+    <div class="headL">牛买网ERP网销系统</div>
+    <ul class="headR">
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" id="notice">
+                <span></span>
+                <label>0</label>
+                <div class="clear"></div>
+            </a>
+        </li>
+        <li class="border"></li>
+        <li id="accSet">
+            <a href="javascript:;" class="userName">
+                <span>虫</span>
+                <label>虫子</label>
+                <b></b>
+                <div class="clear"></div>
+            </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+<div class="myAccount" style="display:none;">
+    <div class="accountTitle">我的账户<b></b></div>
+    <ul>
+        <li><a href="/Admin/Account.html" class="set"><b></b>账户设置</a></li>
+        <li class="border"></li>
+        <li><a href="#" class="help"><b></b>帮助中心</a></li>
+    </ul>
+    <a href="javascript:;" class="btnOut">退出登录</a>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        $(window).resize(function () {
+            $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        });
+        //顶部消息通知
+        $("#notice").mouseover(function () {
+            $(this).children("span").css("background-position", "-486px 0px");
+        });
+        $("#notice").mouseout(function () {
+            $(this).children("span").css("background-position", "-466px 0px");
+        });
+        //主菜单    
+        $("#btnFold").mouseenter(function () {
+            $(this).children("b").css("background-position", "-349px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnFold").mouseout(function () {
+            $(this).children("b").css("background-position", "-211px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnHelp").mouseover(function () {
+            $(this).children("b").css("background-position", "-328px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnHelp").mouseout(function () {
+            $(this).children("b").css("background-position", "-190px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnOpen").mouseover(function () {
+            $(this).children("b").css("background-position", "-349px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnOpen").mouseout(function () {
+            $(this).children("b").css("background-position", "-211px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnSet").mouseover(function () {
+            $(this).children("b").css("background-position", "-129px -206px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnSet").mouseout(function () {
+            $(this).children("b").css("background-position", "-106px -206px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnFold").click(function () {//主菜单折叠menuBottom
+            $("#menu").animate({ width: "80px" }, function () {
+                $("#menu").hide().css("width", "220px");
+                $("#menu2").show();
+            });            
+            $("#listBox").animate({ marginLeft: "95px" });
+            $("#navL").animate({ marginLeft: "95px" });
+            $(".menuBottom").animate({ width: "80px" }, function () {
+                $(".menuBottom").css("width", "220px");
+            });
+        });
+        $("#btnOpen").click(function () {//主菜单展开
+            $("#menu2").animate({ width: "220px" }, function () {
+                $("#menu2").hide().css("width", "80px");
+                $("#menu").show();
+            });
+            $("#listBox").animate({ marginLeft: "235px" });
+            $("#navL").animate({ marginLeft: "235px" });
+        });
+        //子菜单
+        $("#menu").children("ul").children("li").children("a").click(function () {
+            if ($(this).attr("data-url") == "none") {
+                $(this).next("dl").toggle("slow");
+            } else {
+                alert($(this).attr("data-url"));
+            }
+        });
+        $("#menu").children("ul").children("li").children("dl").children("dd").children("a").click(function () {
+            alert($(this).attr("data-url"));
+        });
+        $("#menu2").children("ul").children("li").children("a").click(function () {
+            alert($(this).attr("data-url"));
+        });
+        //我的账户
+        $("#accSet").click(function () {
+            $(".myAccount").toggle("slow");
+        });
+        $(".accountTitle").click(function () {
+            $("#accSet").click();
+        });
+    });
+</script>
+<div id="menu" style="display:block;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) 0px 0px;"></b><span>商品管理</span></a></li>
+        <li><a href="javasctipt:;" class="on" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -21px -21px;"></b><span>报表统计</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -42px 0px;"></b><span>订单管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -84px 0px;"></b><span>权限管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -105px 0px;"></b><span>文章管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -126px 0px;"></b><span>商家入驻</span></a></li>
+        <li><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -147px 0px;"></b><span>广告管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -168px 0px;"></b><span>短信管理</span></a></li> 
+        <li>
+            <a href="javascript:;" data-url="none"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span><label></label></a>
+            <dl style="display:none;">
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -315px -199px;"></b><span>会员信息</span></a></dd>
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -339px -199px;"></b><span>分红操作</span></a></dd>
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -363px -199px;"></b><span>会员留言</span></a></dd>
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -386px -199px;"></b><span>充值提现</span></a></dd>
+            </dl>
+        </li>
+        <li>
+            <a href="javascript:;" data-url="none"><b style="background: url(/Admin/Images/AdminIcons.png) -231px -260px;"></b><span>采购管理</span><label></label></a>
+            <dl style="display:none;">
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -265px -260px;"></b><span>合同管理</span></a></dd>
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -295px -260px;"></b><span>采购单管理</span></a></dd>
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -330px -260px;"></b><span>客户管理</span></a></dd>
+            </dl>
+        </li>       
+        <li class="empty"></li>
+    </ul>
+    <div class="menuBottom">
+        <div class="border"></div>
+        <div class="bottomBtns">
+            <a href="javascript:;" id="btnFold"><b></b><label style="display:none;">折叠</label></a>
+            <a href="javascript:;" id="btnHelp"><b></b><label style="display:none;">帮助中心</label></a>
+            <a href="javascript:;" id="btnSet"><b></b><label style="display:none;">系统设置</label></a>
+        </div>
+    </div>
+</div>
+<div id="menu2" style="display:none;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" title="商品管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -193px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" class="on" title="报表统计" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -226px -140px;"></b></a></li>
+        <li><a href="javasctipt:;" title="订单管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -259px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="会员管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -292px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="权限管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -326px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="文章管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -357px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="商家入驻" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -391px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="广告管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -424px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="短信管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -460px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="采购管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -460px -195px;"></b></a></li>
+        <li class="empty"></li>
+    </ul>
+    <div class="menu2Bottom">
+        <div class="border"></div>
+        <div class="bottom2Btns">
+            <a href="javascript:;" id="btnOpen"><b></b><label style="display:none;">展开</label></a>
+        </div>
+    </div>
+</div>
+<div class="main">    
+    <div id="conter">
+        <div id="listBox" style="margin-left:240px;margin-right:20px;">
+            <div class="form">
+                <div class="formCont">
+                    <ul class="formHead">
+                        <li class="memNum">
+                            <div class="left"><b></b></div>
+                            <div class="right">
+                                <p>今日新增会员人数：<span>2345</span></p>
+                                <i></i>
+                            </div>
+                        </li>
+                        <li class="saleNum">
+                            <div class="left"><b></b></div>
+                            <div class="right">
+                                <p>今日售出商品数量：<span>2345</span></p>
+                                <i></i>
+                            </div>
+                        </li>
+                        <li class="saleMoney">
+                            <div class="left"><b></b></div>
+                            <div class="right">
+                                <p>今日销售金额：<span>2345</span></p>
+                                <i></i>
+                            </div>
+                        </li>
+                        <li class="shareNum">
+                            <div class="left"><b></b></div>
+                            <div class="right">
+                                <p>今日新增股东人数：<span>2345</span></p>
+                                <i></i>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="sales">
+                        <div class="salesL"></div>
+                        <div class="salesR">
+                            <ul>
+                                <li class="sales1"><span>4035</span><p>用户分布</p></li>
+                                <li class="sales2"><span>4035</span><p>线下招商</p></li>
+                                <li class="sales3"><span>4035</span><p>用户分布</p></li>
+                                <li class="sales4"><span>4035</span><p>线下招商</p></li>
+                            </ul>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+                    <div class="saleForm">
+                        <div class="saleData">
+                            <div class="dataL"></div>
+                            <div class="dataR">
+                                <dl>
+                                    <dt><span>最新报表打印</span><a href="javasctipt:;">点击更多</a></dt>
+                                    <dd>
+                                        <span>1</span>
+                                        <p>本月销售数量报表</p>
+                                        <a href="javascript:;">点击下载</a>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dd>
+                                        <span>2</span>
+                                        <p>本月销售数量报表</p>
+                                        <a href="javascript:;">点击下载</a>
+                                        <div class="clear"></div>
+                                    </dd>
+                                    <dd>
+                                        <span>3</span>
+                                        <p>本月销售数量报表</p>
+                                        <a href="javascript:;">点击下载</a>
+                                        <div class="clear"></div>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="saleOrder"></div>
+                        <div class="clear"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

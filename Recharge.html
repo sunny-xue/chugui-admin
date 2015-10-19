@@ -1,0 +1,374 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>牛买网网销系统(ERP)</title>
+<link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet"/>
+<style type="text/css">
+#navL b{width:22px;height:18px;float:left;background:url(/Admin/Images/AdminIcons.png) no-repeat -67px -228px;margin:15px 10px 0px 0px;}
+#navL span{line-height:48px;font-size:20px;color:#5c6371;float:left;}
+/*充值记录*/
+.recharge{border:1px solid #e1e1e1;background:#fbfbfb;}
+.manageTitle{overflow:hidden;border-bottom:1px solid #e1e1e1;margin:0px 15px;padding-top:10px;}
+.manageTitle p{font-size:18px;color:#646b75;text-indent:5px;float:left;}
+.check{float:left;margin-left:80px;overflow:hidden;}
+.check a{margin-right:60px;font-size:16px;color:#8a959e;float:left;padding-bottom:12px;margin-top:4px;}
+.check a:hover{color:#323a45;}
+.check a.on{color:#323a45;border-bottom:2px solid #d84c31;}
+.chargeCont{margin:0px 20px;}
+.chargeCont .border{height:15px;border-bottom:1px solid #e1e1e1;}
+.chargeList dt{height:50px;line-height:50px;background:#f9f9f7;border-top:1px solid #fff;border-bottom:1px solid #e1e1e1;font-size:14px;color:#333;overflow:hidden;}
+.chargeList dd{height:54px;line-height:54px;border-bottom:1px solid #e1e1e1;font-size:14px;overflow:hidden;}
+.chargeList span{width:14%;text-align:center;float:left;}
+.chargeList .listAdd{width:30%;}
+/*分页页码样式*/
+.pagesList{height:40px;padding:10px 0px;}
+.pagesCont{width:550px;height:40px;padding:10px 0px;margin:0px auto;}
+.pagesCont a{height:28px;line-height:28px;border:1px solid #c1c1c1;border-radius:5px;font-size:14px;color:#666;float:left;padding:0px 11px;margin-right:8px;}
+.pagesCont .pagesPrev{width:28px;background:url(/Admin/Images/AdminIcons.png) no-repeat -144px -170px;padding:0px;}
+/*.pagesCont .pagesNext 点不动时变灰色{background:url(/Admin/Images/AdminIcons.png) no-repeat -186px -170px;}*/
+.pagesCont .pagesPrev:hover{background:#d94c30 url(/Admin/Images/AdminIcons.png) no-repeat -165px -170px;}
+.pagesCont .pagesNext{width:28px;background:url(/Admin/Images/AdminIcons.png) no-repeat -249px -170px;padding:0px;}
+/*.pagesCont .pagesNext 点不动时变灰色{background:url(/Admin/Images/AdminIcons.png) no-repeat -207px -170px;}*/
+.pagesCont .pagesNext:hover{background:#d94c30 url(/Admin/Images/AdminIcons.png) no-repeat -228px -170px;}
+.pagesCont label{line-height:28px;float:left;padding:0px 10px 0px 2px;}
+.pagesCont input{width:65px;height:14px;line-height:14px;float:left;padding:7px 0px;border:1px solid #c1c1c1;border-radius:5px;text-align:center;margin:0px 3px 0px 20px;background:#fbfbfb;}
+.pagesCont .jump{background:#d94c30;color:#fff;border:1px solid #d94c30;}
+.pagesCont .jump:hover{background:#b82609;}
+.pagesList a:hover{background:#d94c30;color:#fff;border:1px solid #cc402b;}
+.loadMore{width:150px;height:38px;line-height:38px;text-align:center;background:#f9f9f7;border:1px solid #e1e1e1;border-radius:3px;font-size:14px;color:#666;display:block;margin:50px auto 40px;}
+/*右侧*/
+.contR{width:330px;margin:-675px 15px 0px 30px;float:right;}
+.userBox{padding:15px;margin-bottom:15px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:0px 0px 3px #eee,inset 0px 0px 3px #fff;}
+.name{margin-bottom:15px;border-bottom:1px solid #e1e1e1;padding-bottom:15px;}
+.name span{width:50px;height:50px;background:url(/Admin/Images/AdminIcons.png) no-repeat -160px -47px;float:left;text-align:center;line-height:50px;font-size:24px;color:#d84c31;}
+.time{float:left;line-height:25px;margin-left:10px;}
+.time p{font-size:14px;color:#323a45;}
+.time label{display:block;color:#8a959e;}
+.numBox{overflow:hidden;}
+.numBox a{width:33%;float:left;border-right:1px solid #e1e1e1;text-align:center;}
+.numBox .promotion{border-right:none;}
+.numBox a span{font-size:20px;line-height:28px;display:block;}
+.numBox a label{font-size:14px;line-height:28px;display:block;color:#646b75;}
+.current span{color:#f7af49;}
+.shelves span{color:#f47a55;}
+.promotion span{color:#88b244;}
+.message{padding:15px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:0px 0px 3px #eee,inset 0px 0px 3px #fff;}
+.messTitle{padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid #e1e1e1;overflow:hidden;}
+.messTitle b{width:25px;height:17px;background:url(/Admin/Images/AdminIcons.png) no-repeat -413px 0px;float:left;margin:3px 10px 0px 0px;}
+.messTitle span{font-size:18px;color:#646b75;float:left;}
+.messCont b{width:128px;height:62px;background:url(/Admin/Images/AdminIcons.png) no-repeat -10px -46px;display:block;margin:30px auto 20px;}
+</style>
+<script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
+</head>
+<body>
+<div class="head">
+    <div class="headL">牛买网ERP网销系统</div>
+    <ul class="headR">
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" id="notice">
+                <span></span>
+                <label>0</label>
+                <div class="clear"></div>
+            </a>
+        </li>
+        <li class="border"></li>
+        <li id="accSet">
+            <a href="javascript:;" class="userName">
+                <span>虫</span>
+                <label>虫子</label>
+                <b></b>
+                <div class="clear"></div>
+            </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+<div class="myAccount" style="display:none;">
+    <div class="accountTitle">我的账户<b></b></div>
+    <ul>
+        <li><a href="/Admin/Account.html" class="set"><b></b>账户设置</a></li>
+        <li class="border"></li>
+        <li><a href="#" class="help"><b></b>帮助中心</a></li>
+    </ul>
+    <a href="javascript:;" class="btnOut">退出登录</a>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        $(window).resize(function () {
+            $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        });
+        //顶部消息通知
+        $("#notice").mouseover(function () {
+            $(this).children("span").css("background-position", "-486px 0px");
+        });
+        $("#notice").mouseout(function () {
+            $(this).children("span").css("background-position", "-466px 0px");
+        });
+        //主菜单    
+        $("#btnFold").mouseenter(function () {
+            $(this).children("b").css("background-position", "-349px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnFold").mouseout(function () {
+            $(this).children("b").css("background-position", "-211px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnHelp").mouseover(function () {
+            $(this).children("b").css("background-position", "-328px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnHelp").mouseout(function () {
+            $(this).children("b").css("background-position", "-190px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnOpen").mouseover(function () {
+            $(this).children("b").css("background-position", "-349px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnOpen").mouseout(function () {
+            $(this).children("b").css("background-position", "-211px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnSet").mouseover(function () {
+            $(this).children("b").css("background-position", "-129px -206px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnSet").mouseout(function () {
+            $(this).children("b").css("background-position", "-106px -206px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnFold").click(function () {//主菜单折叠menuBottom
+            $("#menu").animate({ width: "80px" }, function () {
+                $("#menu").hide().css("width", "220px");
+                $("#menu2").show();
+            });            
+            $("#listBox").animate({ marginLeft: "95px" });
+            $("#navL").animate({ marginLeft: "95px" });
+            $(".menuBottom").animate({ width: "80px" }, function () {
+                $(".menuBottom").css("width", "220px");
+            });
+        });
+        $("#btnOpen").click(function () {//主菜单展开
+            $("#menu2").animate({ width: "220px" }, function () {
+                $("#menu2").hide().css("width", "80px");
+                $("#menu").show();
+            });
+            $("#listBox").animate({ marginLeft: "235px" });
+            $("#navL").animate({ marginLeft: "235px" });
+        });
+        //子菜单
+        $("#menu").children("ul").children("li").children("a").click(function () {
+            if ($(this).attr("data-url") == "none") {
+                $(this).next("dl").toggle("slow");
+            } else {
+                alert($(this).attr("data-url"));
+            }
+        });
+        $("#menu").children("ul").children("li").children("dl").children("dd").children("a").click(function () {
+            alert($(this).attr("data-url"));
+        });
+        $("#menu2").children("ul").children("li").children("a").click(function () {
+            alert($(this).attr("data-url"));
+        });
+        //我的账户
+        $("#accSet").click(function () {
+            $(".myAccount").toggle("slow");
+        });
+        $(".accountTitle").click(function () {
+            $("#accSet").click();
+        });
+    });
+</script>
+<div id="menu" style="display:block;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) 0px 0px;"></b><span>商品管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -21px 0px;"></b><span>报表统计</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -42px 0px;"></b><span>订单管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -84px 0px;"></b><span>权限管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -105px 0px;"></b><span>文章管理</span></a></li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -126px 0px;"></b><span>商家入驻</span></a></li>
+        <li><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -147px 0px;"></b><span>广告管理</span></a></li>
+        <li>
+            <a href="javascript:;" data-url="none"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span><label></label></a>
+            <dl>
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -315px -199px;"></b><span>会员信息</span></a></dd>
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -339px -199px;"></b><span>分红操作</span></a></dd>
+                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -363px -199px;"></b><span>会员留言</span></a></dd>
+                <dd><a href="javascript:;" class="on" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -386px -227px;"></b><span>充值提现</span></a></dd>
+            </dl>
+        </li>
+        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -168px 0px;"></b><span>短信管理</span></a></li>        
+        <li class="empty"></li>
+    </ul>
+    <div class="menuBottom">
+        <div class="border"></div>
+        <div class="bottomBtns">
+            <a href="javascript:;" id="btnFold"><b></b><label style="display:none;">折叠</label></a>
+            <a href="javascript:;" id="btnHelp"><b></b><label style="display:none;">帮助中心</label></a>
+            <a href="javascript:;" id="btnSet"><b></b><label style="display:none;">系统设置</label></a>
+        </div>
+    </div>
+</div>
+<div id="menu2" style="display:none;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" title="商品管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -193px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="报表统计" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -226px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="订单管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -259px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" class="on" title="会员管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -292px -140px;"></b></a></li>
+        <li><a href="javasctipt:;" title="权限管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -326px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="文章管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -357px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="商家入驻" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -391px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="广告管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -424px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="短信管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -460px -106px;"></b></a></li>
+        <li class="empty"></li>
+    </ul>
+    <div class="menu2Bottom">
+        <div class="border"></div>
+        <div class="bottom2Btns">
+            <a href="javascript:;" id="btnOpen"><b></b><label style="display:none;">展开</label></a>
+        </div>
+    </div>
+</div>
+<div class="main">    
+    <div class="navBar">
+        <div id="navL" style="margin-left:235px;"><b></b><span>会员管理</span></div>        
+        <div class="clear"></div>
+    </div>
+    <div id="conter">
+        <div id="listBox" style="margin-left:235px;margin-right:360px;">
+            <div class="recharge">
+                <div class="manageTitle">
+                    <p>充值提现</p>
+                    <div class="check"><a href="/Admin/Recharge.html" class="on">充值记录</a><a href="/Admin/Cash.html">提现申请记录</a></div>
+                </div>
+                <div class="chargeCont">
+                    <div class="border"></div>
+                    <dl class="chargeList">
+                        <dt>
+                            <span>账号</span>
+                            <span>真实姓名</span>
+                            <span>性别</span>
+                            <span>手机号</span>
+                            <span class="listAdd">居住地</span>
+                            <span>注册时间</span>
+                        </dt>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                        <dd>
+                            <span>小红帽zz</span>
+                            <span>张三丰</span>
+                            <span>男</span>
+                            <span>15617888128</span>
+                            <span class="listAdd">河南省郑州市金水区</span>
+                            <span>2015.04.15</span>
+                        </dd>
+                    </dl>                                                  
+                    <div class="pagesList">
+                        <div class="pagesCont">
+                            <a href="#" class="pagesPrev"></a>
+                            <a href="#">1</a>
+                            <label>···</label>
+                            <a href="#">12</a>
+                            <a href="#">13</a>
+                            <a href="#">14</a>
+                            <a href="#">100</a>
+                            <a href="#" class="pagesNext"></a>   
+                            <input value="0"/>       
+                            <a href="#" class="jump">跳转</a>                                  
+                        </div>
+                    </div> 
+		            <!--<a href="javascript:;" class="loadMore">加载更多...</a>-->                  
+                </div>            
+            </div>
+        </div>
+        <div class="contR">
+            <div class="userBox">
+                <div class="name">
+                    <span>虫</span>
+                    <div class="time"><p>虫子, 下午好！起来运动一下</p><label>今天是 星期六，2015年04月11日</label></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="numBox">
+                    <a href="#" class="current"><span>1500</span><label>当前数量</label></a>
+                    <a href="#" class="shelves"><span>1200</span><label>已上架数量</label></a>
+                    <a href="#" class="promotion"><span>35</span><label>活动商品</label></a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="message">
+                <div class="messTitle"><b></b><span>信息通告</span></div>
+                <div class="messCont"><b></b></div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

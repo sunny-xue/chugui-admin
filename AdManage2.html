@@ -1,0 +1,1042 @@
+﻿<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8"/>
+<title>牛买网网销系统(ERP)</title>
+<link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet"/>
+<link type="text/css" href="/Admin/Css/AdManage2.css" rel="stylesheet"/>
+<style type="text/css">
+/*右侧*/
+.contR{width:330px;margin:-5830px 15px 0px 30px;float:right;}
+.userBox{padding:15px;margin-bottom:15px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:0px 0px 3px #eee,inset 0px 0px 3px #fff;}
+.name{margin-bottom:15px;border-bottom:1px solid #e1e1e1;padding-bottom:15px;}
+.name span{width:50px;height:50px;background:url(/Admin/Images/AdminIcons.png) no-repeat -160px -47px;float:left;text-align:center;line-height:50px;font-size:24px;color:#d84c31;}
+.time{float:left;line-height:25px;margin-left:10px;}
+.time p{font-size:14px;color:#323a45;}
+.time label{display:block;color:#8a959e;}
+.numBox{overflow:hidden;}
+.numBox a{width:33%;float:left;border-right:1px solid #e1e1e1;text-align:center;}
+.numBox .promotion{border-right:none;}
+.numBox a span{font-size:20px;line-height:28px;display:block;}
+.numBox a label{font-size:14px;line-height:28px;display:block;color:#646b75;}
+.current span{color:#f7af49;}
+.shelves span{color:#f47a55;}
+.promotion span{color:#88b244;}
+.message{padding:15px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:0px 0px 3px #eee,inset 0px 0px 3px #fff;}
+.messTitle{padding-bottom:15px;margin-bottom:15px;border-bottom:1px solid #e1e1e1;overflow:hidden;}
+.messTitle b{width:25px;height:17px;background:url(/Admin/Images/AdminIcons.png) no-repeat -413px 0px;float:left;margin:3px 10px 0px 0px;}
+.messTitle span{font-size:18px;color:#646b75;float:left;}
+.messCont b{width:128px;height:62px;background:url(/Admin/Images/AdminIcons.png) no-repeat -10px -46px;display:block;margin:30px auto 20px;}
+</style>
+<script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
+<script type="text/javascript">
+    $(document).ready(function () {        
+        //添加按钮
+        $("#add").mouseover(function () {
+            $(this).children("b").css("background-position", "-484px -49px");
+            $(this).children("span").css("color", "#dc4c31");
+        });
+        $("#add").mouseout(function () {
+            $(this).children("b").css("background-position", "-298px -22px");
+            $(this).children("span").css("color", "#8a959e");
+        });
+        //筛选按钮
+        $("#filter").mouseover(function () {
+            $(this).children("b").css("background-position", "-449px -49px");
+            $(this).children("span").css("color", "#dc4c31");
+        });
+        $("#filter").mouseout(function () {
+            $(this).children("b").css("background-position", "-382px 0px");
+            $(this).children("span").css("color", "#8a959e");
+        });
+        //更多按钮
+        $("#more").mouseover(function () {
+            $(this).children("b").css("background-position", "-425px -49px");
+            $(this).children("span").css("color", "#dc4c31");
+        });
+        $("#more").mouseout(function () {
+            $(this).children("b").css("background-position", "-358px 0px");
+            $(this).children("span").css("color", "#8a959e");
+        });
+        //搜索按钮
+        $("#search").mouseover(function () {
+            $(this).children("b").css("background-position", "-397px -49px");            
+        });
+        $("#search").mouseout(function () {
+            $(this).children("b").css("background-position", "-330px 0px");            
+        });
+        $("#search").click(function () {
+            if ($(this).children("b").css("background-position") == "-397px -49px") {
+                $(this).children("b").css("background-position", "-295px -74px");
+                $(this).mouseover(function () {
+                    $(this).children("b").css("background-position", "-295px -74px");
+                });
+                $(this).mouseout(function () {
+                    $(this).children("b").css("background-position", "-268px -74px");
+                });
+            } else {
+                $(this).children("b").css("background-position", "-397px -49px");
+                $(this).mouseover(function () {
+                    $(this).children("b").css("background-position", "-397px -49px");
+                });
+                $(this).mouseout(function () {
+                    $(this).children("b").css("background-position", "-330px 0px");
+                });
+            }
+        });
+        //商品列表-鼠标经过显示操作按钮
+        $(".proList").children("dd").mouseover(function () {
+            $(this).children("ul").show();
+        });
+        $(".proList").children("dd").mouseout(function () {
+            $(this).children("ul").hide();
+        });
+        //alert($(".conter").height());
+    });
+</script>
+</head>
+<body>
+<div class="head">
+    <div class="headL">牛买网ERP网销系统</div>
+    <ul class="headR">
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" id="notice">
+                <span></span>
+                <label>0</label>
+                <div class="clear"></div>
+            </a>
+        </li>
+        <li class="border"></li>
+        <li>
+            <a href="javascript:;" class="userName">
+                <span>虫</span>
+                <label>虫子</label>
+                <b></b>
+                <div class="clear"></div>
+            </a>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        $(window).resize(function () {
+            $("#conter").height($(document).height() - 110);//客户操作区自适应 N1
+        });
+        //顶部消息通知
+        $("#notice").mouseover(function () {
+            $(this).children("span").css("background-position", "-486px 0px");
+        });
+        $("#notice").mouseout(function () {
+            $(this).children("span").css("background-position", "-466px 0px");
+        });
+        //主菜单    
+        $("#btnFold").mouseenter(function () {
+            $(this).children("b").css("background-position", "-349px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnFold").mouseout(function () {
+            $(this).children("b").css("background-position", "-211px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnHelp").mouseover(function () {
+            $(this).children("b").css("background-position", "-328px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnHelp").mouseout(function () {
+            $(this).children("b").css("background-position", "-190px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnOpen").mouseover(function () {
+            $(this).children("b").css("background-position", "-349px -24px");
+            $(this).children("label").css("display", "block");
+        });
+        $("#btnOpen").mouseout(function () {
+            $(this).children("b").css("background-position", "-211px -21px");
+            $(this).children("label").css("display", "none");
+        });
+        $("#btnFold").click(function () {//主菜单折叠
+            $("#menu").animate({ width: "80px" }, function () {
+                $("#menu").hide().css("width", "220px");
+                $("#menu2").show();
+            });            
+            $("#listBox").animate({ marginLeft: "95px" });
+            $("#navL").animate({ marginLeft: "95px" });
+        });
+        $("#btnOpen").click(function () {//主菜单展开
+            $("#menu2").animate({ width: "220px" }, function () {
+                $("#menu2").hide().css("width", "80px");
+                $("#menu").show();
+            });
+            $("#listBox").animate({ marginLeft: "235px" });
+            $("#navL").animate({ marginLeft: "235px" });
+        });        
+    });
+</script>
+<div id="menu" style="display:block;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" class="on"><b style="background: url(/Admin/Images/AdminIcons.png) 0px -21px;"></b><span>商品管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -21px 0px;"></b><span>报表统计</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -42px 0px;"></b><span>订单管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -84px 0px;"></b><span>权限管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -105px 0px;"></b><span>文章管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -126px 0px;"></b><span>商家入驻</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -147px 0px;"></b><span>广告管理</span></a></li>
+        <li><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -168px 0px;"></b><span>短信管理</span></a></li>
+        <li>
+            <a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span><label></label></a>
+            <dl>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -315px -199px;"></b><span>会员信息</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -339px -199px;"></b><span>分红操作</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -363px -199px;"></b><span>会员留言</span></a></dd>
+                <dd><a href="javasctipt:;"><b style="background: url(/Admin/Images/AdminIcons.png) -386px -199px;"></b><span>充值提现</span></a></dd>
+            </dl>
+        </li>
+        <li class="empty"></li>
+    </ul>
+    <div class="menuBottom">
+        <div class="border"></div>
+        <div class="bottomBtns">
+            <a href="javascript:;" id="btnFold"><b></b><label style="display:none;">折叠</label></a>
+            <a href="javascript:;" id="btnHelp"><b></b><label style="display:none;">帮助中心</label></a>
+            <a href="javascript:;" id="btnSet"><b></b><label style="">系统设置</label></a>
+        </div>
+    </div>
+</div>
+<div id="menu2" style="display:none;">
+    <ul>
+        <li class="empty"></li>
+        <li><a href="javasctipt:;" class="on" title="商品管理"><b style="background: url(/Admin/Images/AdminIcons.png) -193px -140px;"></b></a></li>
+        <li><a href="javasctipt:;" title="报表统计"><b style="background: url(/Admin/Images/AdminIcons.png) -226px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="订单管理"><b style="background: url(/Admin/Images/AdminIcons.png) -259px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="会员管理"><b style="background: url(/Admin/Images/AdminIcons.png) -292px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="权限管理"><b style="background: url(/Admin/Images/AdminIcons.png) -326px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="文章管理"><b style="background: url(/Admin/Images/AdminIcons.png) -357px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="商家入驻"><b style="background: url(/Admin/Images/AdminIcons.png) -391px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="广告管理"><b style="background: url(/Admin/Images/AdminIcons.png) -424px -106px;"></b></a></li>
+        <li><a href="javasctipt:;" title="短信管理"><b style="background: url(/Admin/Images/AdminIcons.png) -460px -106px;"></b></a></li>
+        <li class="empty"></li>
+    </ul>    
+    <div class="menu2Bottom">
+        <div class="border"></div>
+        <div class="bottom2Btns">
+            <a href="javascript:;" id="btnOpen"><b></b><label style="display:none;">展开</label></a>
+        </div>
+    </div>
+</div>
+<div class="main">    
+    <div class="navBar">
+        <div id="navL" style="margin-left:235px;"><b></b><span>广告管理</span></div>
+        <div class="clear"></div>
+    </div>
+    <div id="conter">
+        <div id="listBox" style="margin-left:210px;margin-right:360px;">
+            <div class="adManage2">
+                    <div class="manageTitle">
+                        <p>广告位</p>
+                        <div class="check"><a href="/Admin/AdManage.html">主站</a><a href="/Admin/AdManage2.html" class="on">分站</a></div>
+                    </div>
+                    <div class="adCont">
+                        <div class="bannerAd">
+                            <div class="bannerL">
+                                <p>商品分类广告位</p>
+                                <!--<label><a href="javascript:;"></a></label>-->   <!--bannerL鼠标经过p隐藏 label显示-->
+                            </div>
+                            <div class="bannerM">
+                                <p>焦点图</p>
+                                <!--<label><a href="javascript:;"></a></label>-->    <!--bannerR鼠标经过p隐藏label显示-->
+                            </div>
+                            <div class="bannerR">
+                                <ul>
+                                    <li class="on">
+                                        <p>广告图</p>
+                                        <!--<label><a href="javascript:;"></a></label>-->
+                                    </li>
+                                    <li>
+                                        <p>广告图</p>
+                                        <!--<label><a href="javascript:;"></a></label>-->
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="hotAtt">
+                            <p class="hotTitle">热门关注</p>
+                            <ul>
+                                <li>
+                                    <p>热门关注广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>热门关注广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>热门关注广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>热门关注广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="floor1">
+                            <div class="floorTitle">
+                                <span>1F美食</span>
+                                <div class="floorTitleR">
+                                    <p>文字广告位</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="floor1">
+                            <div class="floorTitle">
+                                <span>2F娱乐</span>
+                                <div class="floorTitleR">
+                                    <p>文字广告位</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                            </ul>
+                        </div>   
+                        <div class="floor1">
+                            <div class="floorTitle">
+                                <span>3F购物</span>
+                                <div class="floorTitleR">
+                                    <p>文字广告位</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="floor1">
+                            <div class="floorTitle">
+                                <span>4F丽人</span>
+                                <div class="floorTitleR">
+                                    <p>文字广告位</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="floor1">
+                            <div class="floorTitle">
+                                <span>5F生活服务</span>
+                                <div class="floorTitleR">
+                                    <p>文字广告位</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="floor1">
+                            <div class="floorTitle">
+                                <span>6F酒店</span>
+                                <div class="floorTitleR">
+                                    <p>文字广告位</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="floor1">
+                            <div class="floorTitle">
+                                <span>7F旅游景点</span>
+                                <div class="floorTitleR">
+                                    <p>文字广告位</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </div>
+                                <div class="clear"></div>
+                            </div>
+                            <ul>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                                <li>
+                                    <p>广告图</p>
+                                    <!--<label><a href="javascript:;"></a></label>-->
+                                </li>
+                            </ul>
+                        </div>                 
+                    </div>
+                </div>
+        </div>
+        <div class="contR">
+            <div class="userBox">
+                <div class="name">
+                    <span>虫</span>
+                    <div class="time"><p>虫子, 下午好！起来运动一下</p><label>今天是 星期六，2015年04月11日</label></div>
+                    <div class="clear"></div>
+                </div>
+                <div class="numBox">
+                    <a href="#" class="current"><span>1500</span><label>当前数量</label></a>
+                    <a href="#" class="shelves"><span>1200</span><label>已上架数量</label></a>
+                    <a href="#" class="promotion"><span>35</span><label>活动商品</label></a>
+                    <div class="clear"></div>
+                </div>
+            </div>
+            <div class="message">
+                <div class="messTitle"><b></b><span>信息通告</span></div>
+                <div class="messCont"><b></b></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="adAlert" style="display:none;">
+    <div class="alertTitle">广告编辑<span></span></div>
+    <div class="local">
+        <ul>
+            <li>
+                <span>当前位置：</span>
+                <label><a href="javascript:;">广告管理 </a> > 广告编辑</label>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>广告名称：</span>
+                <input/>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>广告类型：</span>
+                <label>幻灯片广告</label>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>广告图片：</span>
+                <div class="shopPic">
+                    <div class="pic">
+                        <div></div>
+                        <div></div>
+                    </div>
+                    <a href="javascript:;" class="btnChoose">
+                        <b></b>
+                        <i>选择图片</i>
+                    </a>
+                </div>
+                <div class="clear"></div>
+            </li>
+            <li>
+                <span>图片链接：</span>
+                <input/>
+                <div class="clear"></div>
+            </li>
+        </ul>
+    </div>
+    <div class="tag">
+        <a href="javascript:;" class="btnConf">确定</a>
+        <a href="javascript:;" class="btnConti">确定并继续</a>
+    </div>
+</div>
+<div class="classAd" style="display:none;">
+    <div class="classTitle">商品分类广告位<span></span></div>
+    <div class="classCont">
+        <dl>
+            <dt>一级分类</dt>
+            <dd class="one on">
+                <span>家用电器</span>
+                <div class="classBtns">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>手机、数码</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>电脑办公</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>家居、家具、家装、厨具</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>男装、女装、内衣</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>个护美妆</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div> 
+            </dd>
+            <dd>
+                <span>鞋帽、箱包、钟表</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>运动户外</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>整车、汽车用品</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>母婴、玩具乐器</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>食品饮料、酒类、生鲜</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>营养保健</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>珠宝、奢侈品</span>
+                <div class="classBtns" style="display:none;">
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd class="border"></dd>
+            <dd class="classText"><input type="text" value="广告名称"/></dd>
+            <dd class="classText"><input type="text" value="广告链接"/></dd>
+            <dd class="classBtns2">
+                <a href="javascript:;" class="btnConf">确定</a>
+                <a href="javascript:;" class="btnRemove">取消</a>
+                <div class="clear"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt>二级分类<span></span></dt>
+            <dd class="one on">
+                <span>家用电器</span>
+                <div class="classBtns">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>手机、数码</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>电脑办公</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>家居、家具、家装、厨具</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>男装、女装、内衣</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>个护美妆</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div> 
+            </dd>
+            <dd>
+                <span>鞋帽、箱包、钟表</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>运动户外</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>整车、汽车用品</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>母婴、玩具乐器</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>食品饮料、酒类、生鲜</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>营养保健</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>珠宝、奢侈品</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd class="border"></dd>
+            <dd class="classText"><input type="text" value="广告名称"/></dd>
+            <dd class="classText"><input type="text" value="广告链接"/></dd>
+            <dd class="classBtns2">
+                <a href="javascript:;" class="btnConf">确定</a>
+                <a href="javascript:;" class="btnRemove">取消</a>
+                <div class="clear"></div>
+            </dd>
+        </dl>
+        <dl>
+            <dt>三级分类<span></span></dt>
+            <dd class="one on">
+                <span>家用电器</span>
+                <div class="classBtns">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>手机、数码</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>电脑办公</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>家居、家具、家装、厨具</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>男装、女装、内衣</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>个护美妆</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div> 
+            </dd>
+            <dd>
+                <span>鞋帽、箱包、钟表</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>运动户外</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>整车、汽车用品</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>母婴、玩具乐器</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>食品饮料、酒类、生鲜</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>营养保健</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd>
+                <span>珠宝、奢侈品</span>
+                <div class="classBtns" style="display:none;">
+                    <b title="删除"></b>
+                    <label title="修改"></label>
+                    <div class="clear"></div>
+                </div>
+                <div class="clear"></div>
+            </dd>
+            <dd class="border"></dd>
+            <dd class="classText"><input type="text" value="广告名称"/></dd>
+            <dd class="classText"><input type="text" value="广告链接"/></dd>
+            <dd class="classBtns2">
+                <a href="javascript:;" class="btnConf">确定</a>
+                <a href="javascript:;" class="btnRemove">取消</a>
+                <div class="clear"></div>
+            </dd>
+        </dl>
+        <div class="clear"></div>
+    </div>
+</div>
+</body>
+</html>
