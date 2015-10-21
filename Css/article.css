@@ -1,18 +1,17 @@
 #navL b{width:19px;height:18px;float:left;background:url(/Admin/Images/AdminIcons.png) no-repeat -182px -228px;margin:15px 10px 0px 0px;}
 #navL span{line-height:48px;font-size:20px;color:#5c6371;float:left;}
 /*当前商品列表*/
-.articleManage{border:1px solid #e1e1e1;background:#fbfbfb;}
+.articleManage{width:770px;margin-left:235px;margin-right: 15px;float: left;border:1px solid #e1e1e1;background:#fbfbfb;}
 
-.articleCont{margin:0px 20px;}
-.articleCont .border{height:15px;border-bottom:1px solid #e1e1e1;}
-.articleList dt{height:40px;line-height:40px;background:#f9f9f7;border-top:1px solid #fff;border-bottom:1px solid #e1e1e1;font-size:14px;color:#d84c31;overflow:hidden;}
-.articleList span{float:left;}
-.articleList dd{height:60px;line-height:60px;border-bottom:1px solid #e1e1e1;color:#333;overflow:hidden;}
-.articleList dd:hover{background:#f9f9f7;}
-.listTitle{width:55%;padding-left:20px;}
-.listTitle input{float:left;margin:23px 5px 0px 0px;}
-.listName{width:10%;text-align:center;}
-.listTime{width:20%;text-align:center;}
+.articleCont{margin: 15px 20px 0px;}
+.list-row input{float:left;margin:23px 5px 0px 0px;}
+.list-header-row span:first-child{width:55%;}
+.list-header-row span:nth-child(2){width:10%;text-align:center;}
+.list-header-row span:last-child{width:20%;text-align:center;}
+.list-row span:nth-child(1){width:55%;}
+.list-row span:nth-child(2){width:10%;text-align:center;}
+.list-row span:nth-child(3){width:20%;text-align:center;}
+
 .listBtns{float:right;overflow:hidden;}
 .listBtns a{width:16px;height:16px;float:right;margin:22px 15px 0px 0px;}
 .btnEdit{background:url(/Admin/Images/AdminIcons.png) no-repeat -257px 0px;}
@@ -20,7 +19,7 @@
 .btnEdit:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -315px -47px;}
 .btnDelete:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -363px -47px;}
 /*右侧*/
-.contR{width:330px;margin:-720px 15px 0px 30px;float:right;}
+.contR{}
 .more1 b{background:url(/Admin/Images/AdminIcons.png) no-repeat -357px -77px;}
 /*确认删除*/
 .delete{width:310px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:-3px 3px 5px rgba(0,0,0,0.10);position:absolute;top:110px;right:0px;z-index:4;}
@@ -30,24 +29,22 @@
 .delCont p{width:250px;line-height:18px;color:#333;margin:30px 0px;}
 .delCont a{width:106px;height:36px;line-height:36px;text-align:center;background:#d84c31;border:1px solid #c94432;border-radius:2px;display:block;color:#fff;margin-bottom:10px;}
 /*添加文章弹出*/
-.addMain{width:900px;height:100%;background:#f9f9f7;border-left:1px solid #e1e1e1;box-shadow:0px 0px 15px rgba(0,0,0,0.10);position:fixed;top:60px;right:0px;overflow-y:auto;}
-.addTitle{height:58px;line-height:58px;color:#333;font-size:16px;text-indent:50px;border-bottom:1px solid #e5e5e5;}
-.addTitle span{width:18px;height:18px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -268px -74px;margin:20px 25px 0px 0px;cursor:pointer;}
-.addCont{border-top:1px solid #fff;border-bottom:1px solid #e1e1e1;}
-.addCont ul{margin-top:10px;}
-.addCont ul li{margin-bottom:20px;}
-.addCont ul li label{width:100px;float:left;text-align:right;line-height:38px;margin-right:15px;}
-.addCont ul li input{width:395px;height:14px;line-height:14px;padding:11px 0px 11px 5px;background:#f9f9f7;border:1px solid #ccc;border-radius:2px;float:left;color:#5d5d5d;}
-.addCont ul li input:hover{background:#fff;}
-.addCont input[type=text]{transition:border linear .2s,box-shadow linear .5s;-moz-transition:border linear .2s,-moz-box-shadow linear .5s;-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;border-color:rgba(233,50,45,.75);box-shadow:0 0 6px rgba(250,190,190,.105);-moz-box-shadow:0 0 6px rgba(250,190,190,.5);-webkit-box-shadow:0 0 6px rgba(250,190,190,3);}
-.addCont ul li select{width:400px;height:38px;line-height:38px;background:#f9f9f7;border:1px solid #ccc;border-radius:2px;float:left;color:#5d5d5d;}
-.addCont ul li b{float:left;line-height:38px;font-weight:normal;color:#999;margin-left:10px;}
-.articleRight{width:700px;height:430px;float:left;}
+.panel{width:900px;height:100%;background:#f9f9f7;border-left:1px solid #e1e1e1;box-shadow:0px 0px 15px rgba(0,0,0,0.10);position:fixed;top:60px;right:0px;overflow-y:auto;}
+.panel .title{height:58px;line-height:58px;color:#333;font-size:16px;text-indent:50px;border-bottom:1px solid #e5e5e5;}
+.panel .title span{width:18px;height:18px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -268px -74px;margin:20px 25px 0px 0px;cursor:pointer;}
+.panel .content{border-top:1px solid #fff;border-bottom:1px solid #e1e1e1;}
+.panel .content ul{margin-top:10px;}
+.panel .content ul li{margin-bottom:20px;}
+.panel .content ul li label{width:100px;float:left;text-align:right;line-height:38px;margin-right:15px;}
+.panel .content ul li input{width:395px;height:14px;line-height:14px;padding:11px 0px 11px 5px;background:#f9f9f7;border:1px solid #ccc;border-radius:2px;float:left;color:#5d5d5d;}
+.panel .content ul li input:hover{background:#fff;}
+.panel .content input[type=text]{transition:border linear .2s,box-shadow linear .5s;-moz-transition:border linear .2s,-moz-box-shadow linear .5s;-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;border-color:rgba(233,50,45,.75);box-shadow:0 0 6px rgba(250,190,190,.105);-moz-box-shadow:0 0 6px rgba(250,190,190,.5);-webkit-box-shadow:0 0 6px rgba(250,190,190,3);}
+.panel .content ul li select{width:400px;height:38px;line-height:38px;background:#f9f9f7;border:1px solid #ccc;border-radius:2px;float:left;color:#5d5d5d;}
+.panel .content ul li b{float:left;line-height:38px;font-weight:normal;color:#999;margin-left:10px;}
+/**富文本编辑区**/
+.rich-edit{width:700px;height:430px;float:left;}
+
 .tips{border-top:1px solid #fff;overflow:hidden;}
 .tips p{width:400px;height:30px;background:#f2dede;border:1px solid #dca7a7;line-height:30px;color:#a94442;border-radius:2px;margin:15px 0px 0px 200px;}
 .tips  p span{width:15px;height:15px;float:left;background:url(/Admin/Images/AdminIcons.png) no-repeat -486px -78px;margin:9px 10px 0px 20px;}
 .tagBtns{margin:15px 0px 0px 200px;padding-bottom:20px;}
-.tagBtns a{width:80px;height:36px;float:left;margin:6px 15px 0px 0px;border-radius:2px;text-align:center;line-height:36px;}
-.btnSave{background:#5cb85c;border:1px solid #4cae4c;color:#fff;}
-.remove{background:#f9f9f7;border:1px solid #e1e1e1;color:#333;}
-.remove:hover{background:#5cb85c;border:1px solid #4cae4c;color:#fff;}

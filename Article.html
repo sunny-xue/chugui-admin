@@ -1,335 +1,385 @@
 ﻿<!DOCTYPE html>
 <html lang="zh-cn">
+
 <head>
-<meta charset="utf-8"/>
-<title>牛买网网销系统(ERP)</title>
-<link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet"/>
-<link rel="stylesheet" href="/Admin/Css/article.css"/>
-<link rel="stylesheet" href="/Admin/Kindeditor/themes/default/default.css" />
+    <meta charset="utf-8" />
+    <title>牛买网网销系统(ERP)</title>
+    <link type="text/css" href="/Admin/Css/Common.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/Admin/Css/article.css" />
+    <link rel="stylesheet" href="/Admin/Kindeditor/themes/default/default.css" />
 </head>
+
 <body>
-<div class="head">
-    <div class="headL">牛买网ERP网销系统</div>
-    <ul class="headR">
-        <li class="border"></li>
-        <li>
-            <a href="javascript:;" id="notice">
-                <span></span>
-                <label>0</label>
-                <div class="clear"></div>
-            </a>
-        </li>
-        <li class="border"></li>
-        <li id="accSet">
-            <a href="javascript:;" class="userName">
-                <span>虫</span>
-                <label>虫子</label>
-                <b></b>
-                <div class="clear"></div>
-            </a>
-        </li>
-    </ul>
-    <div class="clear"></div>
-</div>
-<div class="myAccount" style="display:none;">
-    <div class="accountTitle">我的账户<b></b></div>
-    <ul>
-        <li><a href="/Admin/Account.html" class="set"><b></b>账户设置</a></li>
-        <li class="border"></li>
-        <li><a href="#" class="help"><b></b>帮助中心</a></li>
-    </ul>
-    <a href="javascript:;" class="btnOut">退出登录</a>
-</div>
-<div id="menu" style="display:block;">
-    <ul>
-        <li class="empty"></li>
-        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) 0px 0px;"></b><span>商品管理</span></a></li>
-        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -21px 0px;"></b><span>报表统计</span></a></li>
-        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -42px 0px;"></b><span>订单管理</span></a></li>
-        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span></a></li>
-        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -84px 0px;"></b><span>权限管理</span></a></li>
-        <li><a href="javasctipt:;" class="on" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -105px -21px;"></b><span>文章管理</span></a></li>
-        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -126px 0px;"></b><span>商家入驻</span></a></li>
-        <li><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -147px 0px;"></b><span>广告管理</span></a></li>
-        <li>
-            <a href="javascript:;" data-url="none"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span><label></label></a>
-            <dl>
-                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -315px -199px;"></b><span>会员信息</span></a></dd>
-                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -339px -199px;"></b><span>分红操作</span></a></dd>
-                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -363px -199px;"></b><span>会员留言</span></a></dd>
-                <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -386px -199px;"></b><span>充值提现</span></a></dd>
-            </dl>
-        </li>
-        <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -168px 0px;"></b><span>短信管理</span></a></li>        
-        <li class="empty"></li>
-    </ul>
-    <div class="menuBottom">
-        <div class="border"></div>
-        <div class="bottomBtns">
-            <a href="javascript:;" id="btnFold"><b></b><label style="display:none;">折叠</label></a>
-            <a href="javascript:;" id="btnHelp"><b></b><label style="display:none;">帮助中心</label></a>
-            <a href="javascript:;" id="btnSet"><b></b><label style="display:none;">系统设置</label></a>
-        </div>
-    </div>
-</div>
-<div id="menu2" style="display:none;">
-    <ul>
-        <li class="empty"></li>
-        <li><a href="javasctipt:;" title="商品管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -193px -106px;"></b></a></li>
-        <li><a href="javasctipt:;" title="报表统计" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -226px -106px;"></b></a></li>
-        <li><a href="javasctipt:;" title="订单管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -259px -106px;"></b></a></li>
-        <li><a href="javasctipt:;" title="会员管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -292px -106px;"></b></a></li>
-        <li><a href="javasctipt:;" title="权限管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -326px -106px;"></b></a></li>
-        <li><a href="javasctipt:;" class="on" title="文章管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -357px -140px;"></b></a></li>
-        <li><a href="javasctipt:;" title="商家入驻" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -391px -106px;"></b></a></li>
-        <li><a href="javasctipt:;" title="广告管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -424px -106px;"></b></a></li>
-        <li><a href="javasctipt:;" title="短信管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -460px -106px;"></b></a></li>
-        <li class="empty"></li>
-    </ul>
-    <div class="menu2Bottom">
-        <div class="border"></div>
-        <div class="bottom2Btns">
-            <a href="javascript:;" id="btnOpen"><b></b><label style="display:none;">展开</label></a>
-        </div>
-    </div>
-</div>
-<div class="main">    
-    <div class="navBar">
-        <div id="navL" style="margin-left:235px;" class="title-txt"><b></b><span>文章管理</span></div>
-        <ul>
-            <li><a href="javascript:;" id="add" class="add-icon"><b></b><span>添加</span></a></li>
+    <div class="head">
+        <div class="headL">牛买网ERP网销系统</div>
+        <ul class="headR">
             <li class="border"></li>
-            <li><a href="javascript:;" id="filter" class="filter-icon"><b></b><span>筛选项</span></a></li>
-            <li class="border"></li>
-            <li><a href="javascript:;" id="more" class="more-icon"><b></b><span>更多</span></a>
-                <dl class="more" style="display:none;">
-                    <dd><a href="#" class="more1"><b></b>批量删除</a></dd>
-                </dl>
-                <div class="delete" style="display:none;">
-                    <div class="delTitle">批量删除<b></b></div>
-                    <div class="delCont">
-                        <p>批量删除后，不可以修改，请慎重选择</p>
-                        <a href="javascript:;" class="btnDel">确定删除</a>
-                    </div>
-                </div>
+            <li>
+                <a href="javascript:;" id="notice">
+                    <span></span>
+                    <label>0</label>
+                    <div class="clear"></div>
+                </a>
             </li>
             <li class="border"></li>
-            <li><a href="javascript:;" id="search" class="search-icon"><b></b></a></li>
+            <li id="accSet">
+                <a href="javascript:;" class="userName">
+                    <span>虫</span>
+                    <label>虫子</label>
+                    <b></b>
+                    <div class="clear"></div>
+                </a>
+            </li>
         </ul>
         <div class="clear"></div>
     </div>
-    <div id="conter">
-        <div id="listBox" style="margin-left:235px;margin-right:360px;">
-            <div class="articleManage">
-                <div class="manageTitle">
-                    <p>主站文章</p>
-                    <div class="check"><a href="javascript:;" class="on">新闻</a><a href="javascript:;">公告</a></div>
-                </div>
-                <div class="articleCont">
-                    <div class="border"></div>
-                    <dl class="articleList">
-                        <dt>
-                            <span class="listTitle">标题</span>
-                            <span class="listName">发布人</span>
-                            <span class="listTime">日期</span>
-                        </dt>
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>    
-                        <dd>
-                            <span class="listTitle"><input type="checkbox"/>关于假冒客服诈骗的声明</span>
-                            <span class="listName">admin</span>
-                            <span class="listTime">2015/04/23 16:16</span>
-                            <div class="listBtns" style="display:none;"><a href="javascript:;" title="删除" class="btnDelete"></a><a href="javascript:;" title="编辑" class="btnEdit"></a></div>
-                        </dd>                       
-                    </dl>                                                  
-                    <div class="pagesList">
-                        <div class="pagesCont">
-                            <a href="#" class="pagesPrev"></a>
-                            <a href="#">1</a>
-                            <label>···</label>
-                            <a href="#">12</a>
-                            <a href="#">13</a>
-                            <a href="#">14</a>
-                            <a href="#">100</a>
-                            <a href="#" class="pagesNext"></a>   
-                            <input value="0"/>       
-                            <a href="#" class="jump">跳转</a>                                  
-                        </div>
-                    </div> 
-		            <!--<a href="javascript:;" class="loadMore">加载更多...</a>-->                  
-                </div>            
-            </div>
-        </div>
-        <div class="contR">
-            <div class="userBox">
-                <div class="name">
-                    <span>虫</span>
-                    <div class="time"><p>虫子, 下午好！起来运动一下</p><label>今天是 星期六，2015年04月11日</label></div>
-                    <div class="clear"></div>
-                </div>
-                <div class="numBox">
-                    <a href="#" class="current"><span>1500</span><label>当前数量</label></a>
-                    <a href="#" class="shelves"><span>1200</span><label>已上架数量</label></a>
-                    <a href="#" class="promotion"><span>35</span><label>活动商品</label></a>
-                    <div class="clear"></div>
-                </div>
-            </div>
-            <div class="message">
-                <div class="messTitle"><b></b><span>信息通告</span></div>
-                <div class="messCont"><b></b></div>
-            </div>
-        </div>
-    </div>
-</div>
-<div class="filterMain" style="display:none;">
-    <div class="filterTitle">筛选项<span></span></div>
-    <div class="filterCont">
+    <div class="myAccount" style="display:none;">
+        <div class="accountTitle">我的账户<b></b></div>
         <ul>
-            <li>
-                <span>商品分类：</span>
-                <select>
-                    <option></option>
-                </select>
-                <div class="clear"></div>
-            </li>
-            <li class="date">
-                <span>上传日期：</span>
-                <input/>
-                <a href="javascript:;"></a>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <span>查看选项：</span>
-                <select>
-                    <option></option>
-                </select>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <span>是否兑换：</span>
-                <select>
-                    <option></option>
-                </select>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <span>是否上架：</span>
-                <select>
-                    <option></option>
-                </select>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <span>审查状态：</span>
-                <select>
-                    <option></option>
-                </select>
-                <div class="clear"></div>
-            </li>
-            <li class="filterBtns">
-                 <a href="javascript:;" class="btnFilter">筛选</a>
-                 <a href="javascript:;"class="btnRemove">重置</a>
-                 <div class="clear"></div>
-            </li>
-         </ul>
-     </div>  
-</div>
-<div class="addMain" style="display:none;">
-    <div class="addTitle"><label>添加文章</label><span></span></div>
-    <div class="addCont">
-        <ul>
-            <li><label>文章标题：</label><input type="text"/><div class="clear"></div></li>
-            <li>
-                <label>文章类型：</label>
-                <select>
-                    <option>新闻</option>
-                    <option>公告</option>
-                </select>
-                <div class="clear"></div>
-            </li>
-            <li class="article">
-                <label>文章内容：</label>
-                <div class="articleRight"><textarea name="content" style="width:700px;height:400px;visibility:hidden;"></textarea></div>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <label>关键字：</label>
-                <input type="text"/>
-                <b>提示：多个关键字用逗号隔开</b>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <label>新闻链接：</label>
-                <input type="text"/>
-                <div class="clear"></div>
-            </li>
-            <li>
-                <label>排序号：</label>
-                <input type="text"/>
-                <div class="clear"></div>
-            </li>
+            <li><a href="/Admin/Account.html" class="set"><b></b>账户设置</a></li>
+            <li class="border"></li>
+            <li><a href="#" class="help"><b></b>帮助中心</a></li>
         </ul>
-    </div>    
-    <div class="tips">
-        <p><span></span>文章标题不能为空</p>
+        <a href="javascript:;" class="btnOut">退出登录</a>
     </div>
-    <div class="tagBtns">
-         <a href="javascript:;" class="btnSave">保存</a>
-         <a href="javascript:;"class="remove">取消</a>
-         <div class="clear"></div>
+    <div id="menu" style="display:block;">
+        <ul>
+            <li class="empty"></li>
+            <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) 0px 0px;"></b><span>商品管理</span></a></li>
+            <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -21px 0px;"></b><span>报表统计</span></a></li>
+            <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -42px 0px;"></b><span>订单管理</span></a></li>
+            <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span></a></li>
+            <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -84px 0px;"></b><span>权限管理</span></a></li>
+            <li><a href="javasctipt:;" class="on" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -105px -21px;"></b><span>文章管理</span></a></li>
+            <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -126px 0px;"></b><span>商家入驻</span></a></li>
+            <li><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -147px 0px;"></b><span>广告管理</span></a></li>
+            <li>
+                <a href="javascript:;" data-url="none"><b style="background: url(/Admin/Images/AdminIcons.png) -63px 0px;"></b><span>会员管理</span><label></label></a>
+                <dl>
+                    <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -315px -199px;"></b><span>会员信息</span></a></dd>
+                    <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -339px -199px;"></b><span>分红操作</span></a></dd>
+                    <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -363px -199px;"></b><span>会员留言</span></a></dd>
+                    <dd><a href="javascript:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -386px -199px;"></b><span>充值提现</span></a></dd>
+                </dl>
+            </li>
+            <li><a href="javasctipt:;" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -168px 0px;"></b><span>短信管理</span></a></li>
+            <li class="empty"></li>
+        </ul>
+        <div class="menuBottom">
+            <div class="border"></div>
+            <div class="bottomBtns">
+                <a href="javascript:;" id="btnFold"><b></b><label style="display:none;">折叠</label></a>
+                <a href="javascript:;" id="btnHelp"><b></b><label style="display:none;">帮助中心</label></a>
+                <a href="javascript:;" id="btnSet"><b></b><label style="display:none;">系统设置</label></a>
+            </div>
+        </div>
     </div>
-    <div style="height:100px"></div>
-</div>
+    <div id="menu2" style="display:none;">
+        <ul>
+            <li class="empty"></li>
+            <li><a href="javasctipt:;" title="商品管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -193px -106px;"></b></a></li>
+            <li><a href="javasctipt:;" title="报表统计" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -226px -106px;"></b></a></li>
+            <li><a href="javasctipt:;" title="订单管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -259px -106px;"></b></a></li>
+            <li><a href="javasctipt:;" title="会员管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -292px -106px;"></b></a></li>
+            <li><a href="javasctipt:;" title="权限管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -326px -106px;"></b></a></li>
+            <li><a href="javasctipt:;" class="on" title="文章管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -357px -140px;"></b></a></li>
+            <li><a href="javasctipt:;" title="商家入驻" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -391px -106px;"></b></a></li>
+            <li><a href="javasctipt:;" title="广告管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -424px -106px;"></b></a></li>
+            <li><a href="javasctipt:;" title="短信管理" data-url="http://www.nbbuy.com"><b style="background: url(/Admin/Images/AdminIcons.png) -460px -106px;"></b></a></li>
+            <li class="empty"></li>
+        </ul>
+        <div class="menu2Bottom">
+            <div class="border"></div>
+            <div class="bottom2Btns">
+                <a href="javascript:;" id="btnOpen"><b></b><label style="display:none;">展开</label></a>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="navBar">
+            <div id="navL" style="margin-left:235px;" class="title-txt"><b></b><span>文章管理</span></div>
+            <ul>
+                <li><a href="javascript:;" id="add" class="add-icon"><b></b><span>添加</span></a></li>
+                <li class="border"></li>
+                <li><a href="javascript:;" id="filter" class="filter-icon"><b></b><span>筛选项</span></a></li>
+                <li class="border"></li>
+                <li><a href="javascript:;" id="more" class="more-icon"><b></b><span>更多</span></a>
+                    <dl class="more" style="display:none;">
+                        <dd><a href="#" class="more1"><b></b>批量删除</a></dd>
+                    </dl>
+                    <div class="delete" style="display:none;">
+                        <div class="delTitle">批量删除<b></b></div>
+                        <div class="delCont">
+                            <p>批量删除后，不可以修改，请慎重选择</p>
+                            <a href="javascript:;" class="btnDel">确定删除</a>
+                        </div>
+                    </div>
+                </li>
+                <li class="border"></li>
+                <li><a href="javascript:;" id="search" class="search-icon"><b></b></a></li>
+            </ul>
+            <div class="clear"></div>
+        </div>
+        <div id="conter">
+            <div id="listBox">
+                <div class="articleManage">
+                    <div class="manageTitle">
+                        <p>主站文章</p>
+                        <div class="check"><a href="javascript:;" class="on">新闻</a><a href="javascript:;">公告</a></div>
+                    </div>
+                    <div class="articleCont">
+                        <div class="list-table">
+                            <dl>
+                                <dt class="list-header-row">
+                                    <span>标题</span>
+                                    <span>发布人</span>
+                                    <span>日期</span>
+                                </dt>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                                <dd class="list-row">
+                                    <span><input type="checkbox"/>关于假冒客服诈骗的声明</span>
+                                    <span>admin</span>
+                                    <span>2015/04/23 16:16</span>
+                                    <div class="listBtns" style="display:none;">
+                                        <a href="javascript:;" title="删除" class="btnDelete"></a>
+                                        <a href="javascript:;" title="编辑" class="btnEdit"></a>
+                                    </div>
+                                </dd>
+                            </dl>
+                        </div>
+                        <div class="pagesList">
+                            <div class="pagesCont">
+                                <a href="#" class="pagesPrev"></a>
+                                <a href="#">1</a>
+                                <label>···</label>
+                                <a href="#">12</a>
+                                <a href="#">13</a>
+                                <a href="#">14</a>
+                                <a href="#">100</a>
+                                <a href="#" class="pagesNext"></a>
+                                <input value="0" />
+                                <a href="#" class="jump">跳转</a>
+                            </div>
+                        </div>
+                        <!--<a href="javascript:;" class="loadMore">加载更多...</a>-->
+                    </div>
+                </div>
+                <div class="contR cell">
+                    <div class="userBox">
+                        <div class="name">
+                            <span>虫</span>
+                            <div class="time">
+                                <p>虫子, 下午好！起来运动一下</p>
+                                <label>今天是 星期六，2015年04月11日</label>
+                            </div>
+                            <div class="clear"></div>
+                        </div>
+                        <div class="numBox">
+                            <a href="#" class="current"><span>1500</span><label>当前数量</label></a>
+                            <a href="#" class="shelves"><span>1200</span><label>已上架数量</label></a>
+                            <a href="#" class="promotion"><span>35</span><label>活动商品</label></a>
+                            <div class="clear"></div>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="messTitle"><b></b><span>信息通告</span></div>
+                        <div class="messCont"><b></b></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="filterMain" style="display:none;">
+        <div class="filterTitle">筛选项<span></span></div>
+        <div class="filterCont">
+            <ul>
+                <li>
+                    <span>商品分类：</span>
+                    <select>
+                        <option></option>
+                    </select>
+                    <div class="clear"></div>
+                </li>
+                <li class="date">
+                    <span>上传日期：</span>
+                    <input/>
+                    <a href="javascript:;"></a>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <span>查看选项：</span>
+                    <select>
+                        <option></option>
+                    </select>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <span>是否兑换：</span>
+                    <select>
+                        <option></option>
+                    </select>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <span>是否上架：</span>
+                    <select>
+                        <option></option>
+                    </select>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <span>审查状态：</span>
+                    <select>
+                        <option></option>
+                    </select>
+                    <div class="clear"></div>
+                </li>
+                <li class="filterBtns">
+                    <a href="javascript:;" class="btnFilter">筛选</a>
+                    <a href="javascript:;" class="btnRemove">重置</a>
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="panel" style="display:none;">
+        <div class="title">
+            <label>添加文章</label><span></span></div>
+        <div class="content">
+            <ul>
+                <li>
+                    <label>文章标题：</label>
+                    <input type="text" />
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <label>文章类型：</label>
+                    <select>
+                        <option>新闻</option>
+                        <option>公告</option>
+                    </select>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <label>文章内容：</label>
+                    <div class="rich-edit">
+                        <textarea name="content" style="width:700px;height:400px;visibility:hidden;"></textarea>
+                    </div>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <label>关键字：</label>
+                    <input type="text" />
+                    <b>提示：多个关键字用逗号隔开</b>
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <label>新闻链接：</label>
+                    <input type="text" />
+                    <div class="clear"></div>
+                </li>
+                <li>
+                    <label>排序号：</label>
+                    <input type="text" />
+                    <div class="clear"></div>
+                </li>
+            </ul>
+        </div>
+        <div class="tips">
+            <p><span></span>文章标题不能为空</p>
+        </div>
+        <div class="tagBtns">
+            <a href="javascript:;" class="green-btn">保存</a>
+            <a href="javascript:;" class="white-btn">取消</a>
+            <div class="clear"></div>
+        </div>
+        <div style="height:100px"></div>
+    </div>
 </body>
 <script type="text/javascript" src="http://apix.nbbuy.com/Js/JQuery.js"></script>
 <script charset="utf-8" src="/Admin/Kindeditor/kindeditor-min.js"></script>
 <script charset="utf-8" src="/Admin/Kindeditor/lang/zh_CN.js"></script>
 <script type="text/javascript" src="/Admin/Js/common.js"></script>
 <script charset="utf-8" src="/Admin/Js/article.js"></script>
+
 </html>

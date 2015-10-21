@@ -60,10 +60,10 @@
          }
      });
      //商品列表-鼠标经过显示操作按钮
-     $(".articleList").children("dd").mouseover(function() {
+     $(".list-row").mouseover(function() {
          $(this).children("div").show();
      });
-     $(".articleList").children("dd").mouseout(function() {
+     $(".list-row").mouseout(function() {
          $(this).children("div").hide();
      });
      $("#filter").click(function() { //打开筛选条件
@@ -89,20 +89,20 @@
      });
      //产品编辑
      $(".btnEdit").click(function() {
-         $(".addMain").show("slow");
-         $(".addTitle").children("label").html("编辑文章");
+         $(".panel").show("slow");
+         $(".title").children("label").html("编辑文章");
      });
      //关闭产品编辑框
-     $(".addTitle").children("span").click(function() {
-         $(".addMain").hide("slow");
+     $(".title").children("span").click(function() {
+         $(".panel").hide("slow");
      });
      //添加产品
      $("#add").click(function() {
-         $(".addMain").show("slow");
-         $(".addTitle").children("label").html("添加文章");
+         $(".panel").show("slow");
+         $(".title").children("label").html("添加文章");
      });
      //列表自选中
-     $(".articleList").children("dd").click(function() {
-         $(this).children(".listTitle").children("input").prop("checked", $(this).children(".listTitle").children("input").prop("checked") === true ? false : true);
+     $(".list-table").children("dd").click(function() {
+         $(this).children(".list-row").children("input").prop("checked", $(this).children(".list-row").children("input").prop("checked") === true ? false : true);
      });
  });

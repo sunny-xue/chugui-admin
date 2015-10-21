@@ -8,6 +8,28 @@ button{outline:none;}
 select{outline:none;}
 textarea{outline:none;}
 .clear{clear:both;}
+/**两栏或多栏自适应布局的通用类*/
+.cell {
+    display: table-cell;
+    width: 9999px;
+    *display: inline-block;
+    *width: auto;
+}
+/**复选框样式**/
+.check{float:left;margin-left:80px;overflow:hidden;}
+.check a{margin-right:60px;font-size:16px;color:#8a959e;float:left;padding-bottom:12px;margin-top:4px;}
+.check a:hover{color:#323a45;}
+.check a.on{color:#323a45;border-bottom:2px solid #d84c31;}
+/**必填文本框样式*/
+.require-input{transition:border linear .2s,box-shadow linear .5s;-moz-transition:border linear .2s,-moz-box-shadow linear .5s;-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;border-color:rgba(233,50,45,.75);box-shadow:0 0 6px rgba(250,190,190,.105);-moz-box-shadow:0 0 6px rgba(250,190,190,.5);-webkit-box-shadow:0 0 6px rgba(250,190,190,3);}
+/**下拉框*/
+.drop-list{width:400px;height:38px;line-height:38px;background:#f9f9f7;border:1px solid #ccc;border-radius:2px;float:left;color:#5d5d5d;}
+/**绿色按钮**/
+.green-btn{display:inline-block;width:80px;height:36px;border-radius:2px;text-align:center;line-height:36px;background:#5cb85c;border:1px solid #4cae4c;color:#fff;}
+/**白色按钮**/
+.white-btn{display:inline-block;width:80px;height:36px;border-radius:2px;text-align:center;line-height:36px;background:#f9f9f7;border:1px solid #e1e1e1;color:#333;}
+.white-btn:hover{background:#5cb85c;border:1px solid #4cae4c;color:#fff;}
+
 /*头部*/
 .head{width:100%;height:60px;line-height:60px;background:#393939;position:fixed;top:0px;left:0px;z-index:2;}
 .headL{float:left;font-size:16px;color:#aeb2b7;padding-left:20px;}
@@ -105,29 +127,6 @@ textarea{outline:none;}
 .more-icon b{width:12px;height:8px;background:url(/Admin/Images/AdminIcons.png) no-repeat -358px 0px;margin:13px 5px 0px 0px;}
 .search-icon b{width:18px;height:18px;background:url(/Admin/Images/AdminIcons.png) no-repeat -330px 0px;margin:8px 0px 0px 0px;}
 
-/**复选框样式**/
-.check{float:left;margin-left:80px;overflow:hidden;}
-.check a{margin-right:60px;font-size:16px;color:#8a959e;float:left;padding-bottom:12px;margin-top:4px;}
-.check a:hover{color:#323a45;}
-.check a.on{color:#323a45;border-bottom:2px solid #d84c31;}
-
-/*分页页码样式*/
-.pagesList{height:40px;padding:10px 0px;}
-.pagesCont{width:550px;height:40px;padding:10px 0px;margin:0px auto;}
-.pagesCont a{height:28px;line-height:28px;border:1px solid #c1c1c1;border-radius:5px;font-size:14px;color:#666;float:left;padding:0px 11px;margin-right:8px;}
-.pagesCont .pagesPrev{width:28px;background:url(/Admin/Images/AdminIcons.png) no-repeat -144px -170px;padding:0px;}
-/*.pagesCont .pagesNext 点不动时变灰色{background:url(/Admin/Images/AdminIcons.png) no-repeat -186px -170px;}*/
-.pagesCont .pagesPrev:hover{background:#d94c30 url(/Admin/Images/AdminIcons.png) no-repeat -165px -170px;}
-.pagesCont .pagesNext{width:28px;background:url(/Admin/Images/AdminIcons.png) no-repeat -249px -170px;padding:0px;}
-/*.pagesCont .pagesNext 点不动时变灰色{background:url(/Admin/Images/AdminIcons.png) no-repeat -207px -170px;}*/
-.pagesCont .pagesNext:hover{background:#d94c30 url(/Admin/Images/AdminIcons.png) no-repeat -228px -170px;}
-.pagesCont label{line-height:28px;float:left;padding:0px 10px 0px 2px;}
-.pagesCont input{width:65px;height:14px;line-height:14px;float:left;padding:7px 0px;border:1px solid #c1c1c1;border-radius:5px;text-align:center;margin:0px 3px 0px 20px;background:#fbfbfb;}
-.pagesCont .jump{background:#d94c30;color:#fff;border:1px solid #d94c30;}
-.pagesCont .jump:hover{background:#b82609;}
-.pagesList a:hover{background:#d94c30;color:#fff;border:1px solid #cc402b;}
-.loadMore{width:150px;height:38px;line-height:38px;text-align:center;background:#f9f9f7;border:1px solid #e1e1e1;border-radius:3px;font-size:14px;color:#666;display:block;margin:50px auto 40px;}
-
 /*右侧*/
 .userBox{padding:15px;margin-bottom:15px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:0px 0px 3px #eee,inset 0px 0px 3px #fff;}
 .name{margin-bottom:15px;border-bottom:1px solid #e1e1e1;padding-bottom:15px;}
@@ -171,3 +170,27 @@ textarea{outline:none;}
 .navBar .more dd a{width:100%;height:100%;line-height:40px;overflow:hidden;display:block;font-size:14px;color:#8a959e;margin:0px;padding:0px;}
 .more dd a:hover{background:#f2f2ea;}
 .more dd a b{width:16px;height:16px;float:left;margin:12px 10px 0px 20px;}
+/**列表*/
+.list-table{margin:0px 0px;}
+.list-table .list-header-row{height:40px;line-height:40px;padding-left: 20px;background:#f9f9f7;font-size:14px;color:#d84c31;overflow:hidden;border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;}
+.list-table .list-header-row span{width:20%;display: inline-block;}
+.list-table .list-row{height:60px;line-height:60px;padding-left: 20px;color:#333;overflow:hidden;border-bottom:1px solid #e1e1e1;}
+.list-table .list-row span{width:20%;display: inline-block;}
+.list-table .list-row:hover{background:#f9f9f7;}
+/*分页页码样式*/
+.pagesList{height:40px;padding:10px 0px;}
+.pagesCont{width:550px;height:40px;padding:10px 0px;margin:0px auto;}
+.pagesCont a{height:28px;line-height:28px;border:1px solid #c1c1c1;border-radius:5px;font-size:14px;color:#666;float:left;padding:0px 11px;margin-right:8px;}
+.pagesCont .pagesPrev{width:28px;background:url(/Admin/Images/AdminIcons.png) no-repeat -144px -170px;padding:0px;}
+/*.pagesCont .pagesNext 点不动时变灰色{background:url(/Admin/Images/AdminIcons.png) no-repeat -186px -170px;}*/
+.pagesCont .pagesPrev:hover{background:#d94c30 url(/Admin/Images/AdminIcons.png) no-repeat -165px -170px;}
+.pagesCont .pagesNext{width:28px;background:url(/Admin/Images/AdminIcons.png) no-repeat -249px -170px;padding:0px;}
+/*.pagesCont .pagesNext 点不动时变灰色{background:url(/Admin/Images/AdminIcons.png) no-repeat -207px -170px;}*/
+.pagesCont .pagesNext:hover{background:#d94c30 url(/Admin/Images/AdminIcons.png) no-repeat -228px -170px;}
+.pagesCont label{line-height:28px;float:left;padding:0px 10px 0px 2px;}
+.pagesCont input{width:65px;height:14px;line-height:14px;float:left;padding:7px 0px;border:1px solid #c1c1c1;border-radius:5px;text-align:center;margin:0px 3px 0px 20px;background:#fbfbfb;}
+.pagesCont .jump{background:#d94c30;color:#fff;border:1px solid #d94c30;}
+.pagesCont .jump:hover{background:#b82609;}
+.pagesList a:hover{background:#d94c30;color:#fff;border:1px solid #cc402b;}
+.loadMore{width:150px;height:38px;line-height:38px;text-align:center;background:#f9f9f7;border:1px solid #e1e1e1;border-radius:3px;font-size:14px;color:#666;display:block;margin:50px auto 40px;}
+
