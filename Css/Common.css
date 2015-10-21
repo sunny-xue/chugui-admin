@@ -109,11 +109,8 @@ textarea{outline:none;}
 .myAccount .border{height:auto;border-bottom:1px solid #fff;}
 .btnOut{width:78px;height:28px;line-height:28px;text-align:center;background:#d84c31;border:1px solid #c94432;border-radius:2px;color:#fff;display:block;margin:10px 0px 10px 105px;}
 
-
-.manageTitle{overflow:hidden;border-bottom:1px solid #e1e1e1;margin:0px 15px;padding-top:10px;}
-.manageTitle p{font-size:18px;color:#646b75;text-indent:5px;float:left;}
-
 /*带图标的导航**/
+.navBar .title-txt{line-height:48px;font-size:20px;color:#5c6371;float:left;}
 .navBar ul{float:right;margin-right:30px;overflow:hidden;}
 .navBar ul li{float:left;}
 .navBar ul li a{height:34px;line-height:34px;padding:0px 10px;margin-top:7px;display:block;border-radius:2px;}
@@ -170,8 +167,15 @@ textarea{outline:none;}
 .navBar .more dd a{width:100%;height:100%;line-height:40px;overflow:hidden;display:block;font-size:14px;color:#8a959e;margin:0px;padding:0px;}
 .more dd a:hover{background:#f2f2ea;}
 .more dd a b{width:16px;height:16px;float:left;margin:12px 10px 0px 20px;}
+
+/**列表头部导航条**/
+.tab-nav{width:770px;margin-left:235px;margin-right: 15px;float: left;border:1px solid #e1e1e1;background:#fbfbfb;}
+.tab-nav .nav-list{overflow:hidden;border-bottom:1px solid #e1e1e1;margin:0px 15px;padding-top:10px;}
+.nav-list p{font-size:18px;color:#646b75;text-indent:5px;float:left;}
+
 /**列表*/
-.list-table{margin:0px 0px;}
+.list-comp{margin: 15px 20px 0px;}
+.list-comp .list-table{margin:0px 0px;}
 .list-table .list-header-row{height:40px;line-height:40px;padding-left: 20px;background:#f9f9f7;font-size:14px;color:#d84c31;overflow:hidden;border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;}
 .list-table .list-header-row span{width:20%;display: inline-block;}
 .list-table .list-row{height:60px;line-height:60px;padding-left: 20px;color:#333;overflow:hidden;border-bottom:1px solid #e1e1e1;}
