@@ -15,11 +15,6 @@ textarea{outline:none;}
     *display: inline-block;
     *width: auto;
 }
-/**复选框样式**/
-.check{float:left;margin-left:80px;overflow:hidden;}
-.check a{margin-right:60px;font-size:16px;color:#8a959e;float:left;padding-bottom:12px;margin-top:4px;}
-.check a:hover{color:#323a45;}
-.check a.on{color:#323a45;border-bottom:2px solid #d84c31;}
 /**必填文本框样式*/
 .require-input{transition:border linear .2s,box-shadow linear .5s;-moz-transition:border linear .2s,-moz-box-shadow linear .5s;-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;border-color:rgba(233,50,45,.75);box-shadow:0 0 6px rgba(250,190,190,.105);-moz-box-shadow:0 0 6px rgba(250,190,190,.5);-webkit-box-shadow:0 0 6px rgba(250,190,190,3);}
 /**下拉框*/
@@ -176,7 +171,13 @@ textarea{outline:none;}
 .tab-nav{margin-right: 15px;border:1px solid #e1e1e1;background:#fbfbfb;}
 .tab-nav .nav-list{overflow:hidden;border-bottom:1px solid #e1e1e1;margin:0px 15px;padding-top:10px;}
 .nav-list p{font-size:18px;color:#646b75;text-indent:5px;float:left;}
-
+/**导航框样式**/
+.nav-list .check{float:left;margin-left:80px;overflow:hidden;}
+.nav-list .check a{margin-right:60px;font-size:16px;color:#8a959e;float:left;padding-bottom:12px;margin-top:4px;}
+.nav-list .check a:hover{color:#323a45;}
+.nav-list .check a.on{color:#323a45;border-bottom:2px solid #d84c31;}
+.nav-list .filter-box{float: right; padding-top: 10px;}
+.nav-list .filter-box select{width:auto !important;color:#8a959e !important;border:none !important;}
 /**列表*/
 .list-comp{margin: 15px 20px 0px;}
 .list-comp .list-table{margin:0px 0px;}
@@ -202,6 +203,32 @@ textarea{outline:none;}
 .pagesList a:hover{background:#d94c30;color:#fff;border:1px solid #cc402b;}
 .loadMore{width:150px;height:38px;line-height:38px;text-align:center;background:#f9f9f7;border:1px solid #e1e1e1;border-radius:3px;font-size:14px;color:#666;display:block;margin:50px auto 40px;}
 
+/*编辑器面板*/
+.panel{width:900px;height:100%;background:#f9f9f7;border-left:1px solid #e1e1e1;box-shadow:0px 0px 15px rgba(0,0,0,0.10);position:fixed;top:60px;right:0px;overflow-y:auto;}
+.panel .title{height:58px;line-height:58px;color:#333;font-size:16px;text-indent:50px;border-bottom:1px solid #e5e5e5;}
+.panel .title span{width:18px;height:18px;float:right;background:url(/Admin/Images/AdminIcons.png) no-repeat -268px -74px;margin:20px 25px 0px 0px;cursor:pointer;}
+.panel .content{border-top:1px solid #fff;border-bottom:1px solid #e1e1e1;}
+.panel .content ul{margin-top:10px;}
+.panel .content ul li{margin-bottom:20px;}
+.panel .content ul li label{width:100px;float:left;text-align:right;line-height:38px;margin-right:15px;}
+.panel .content ul li input[type=text]{width:395px;height:14px;line-height:14px;padding:11px 0px 11px 5px;background:#f9f9f7;border:1px solid #ccc;border-radius:2px;float:left;color:#5d5d5d;}
+.panel .content ul li input:hover{background:#fff;}
+.panel .content input[type=text]{transition:border linear .2s,box-shadow linear .5s;-moz-transition:border linear .2s,-moz-box-shadow linear .5s;-webkit-transition:border linear .2s,-webkit-box-shadow linear .5s;border-color:rgba(233,50,45,.75);box-shadow:0 0 6px rgba(250,190,190,.105);-moz-box-shadow:0 0 6px rgba(250,190,190,.5);-webkit-box-shadow:0 0 6px rgba(250,190,190,3);}
+.panel .content ul li select{width:400px;height:38px;line-height:38px;background:#f9f9f7;border:1px solid #ccc;border-radius:2px;float:left;color:#5d5d5d;}
+.panel .content ul li b{float:left;line-height:38px;font-weight:normal;color:#999;margin-left:10px;}
+/**富文本编辑区**/
+.rich-edit{width:700px;height:430px;float:left;}
+
+.tips{border-top:1px solid #fff;overflow:hidden;}
+.tips p{width:400px;height:30px;background:#f2dede;border:1px solid #dca7a7;line-height:30px;color:#a94442;border-radius:2px;margin:15px 0px 0px 200px;}
+.tips  p span{width:15px;height:15px;float:left;background:url(/Admin/Images/AdminIcons.png) no-repeat -486px -78px;margin:9px 10px 0px 20px;}
+.tagBtns{margin:15px 0px 0px 200px;padding-bottom:20px;}
+.filterBtns {margin:0px 20px 0px 115px;}
+
+.tags label{width:auto !important;}
+.checkbox-comp{display:inline-block;}
+.checkbox-comp label{vertical-align:middle;float: none !important;}
+.checkbox-comp input{margin-right:2px;vertical-align:middle}
 
 .add-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -298px -22px;}
 .filter-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -382px 0px;}
@@ -212,8 +239,10 @@ textarea{outline:none;}
 .edit-btn:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -315px -47px;}
 .del-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -305px 0px;}
 .del-btn:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -363px -47px;}
-/**图片选择按钮**/
-.btnChoose{width:120px;height:38px;line-height:38px;border:1px solid #ccc;border-radius:2px;display:block;overflow:hidden;}
-.btnChoose b{width:20px;height:16px;background:url(/Admin/Images/AdminIcons.png) no-repeat -154px -201px;float:left;margin:11px 5px 0px 20px;}
-.btnChoose i{float:left;font-style:normal;color:#808080;}
+/**路径选择按钮**/
+.file-comp{display: inline-block; width: 395px;white-space: nowrap;}
+.file-comp input{width: 290px !important;margin-right: 5px;}
+.file-comp a{width:100px;height:36px;line-height:36px;border:1px solid #ccc;border-radius:2px;display:inline-block;overflow:hidden;}
+.file-comp a b{width:20px;height:16px;background:url(/Admin/Images/AdminIcons.png) no-repeat -154px -201px;float:left;margin:11px 5px 0px 20px;}
+.file-comp a i{float:left;font-style:normal;color:#808080;}
 

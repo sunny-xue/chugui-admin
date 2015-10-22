@@ -126,6 +126,14 @@
                     <div class="nav-list">
                         <p>主站文章</p>
                         <div class="check"><a href="javascript:;" class="on">新闻</a><a href="javascript:;">公告</a></div>
+                        <div class="filter-box">
+                             <select>
+                        <option>近一个月</option>
+                    </select>
+                    <select>
+                        <option>已提现</option>
+                    </select>
+                        </div>
                     </div>
                     <div class="list-comp">
                         <div class="list-table">
@@ -342,10 +350,32 @@
                 </li>
                  <li>
                     <label>上传图片：</label>
-                    <a href="javascript:;" class="btnChoose">
+                    <div class="file-comp">
+                         <input type="text">
+                    <a href="javascript:;">
                         <b></b>
                         <i>选择图片</i>
                     </a> 
+                    </div>
+                   
+                    <div class="clear"></div>
+                </li>
+                 <li>
+                    <label>添加标签：</label>
+                    <div class="tags">
+                        <div class="checkbox-comp">  
+                            <input id="tag1" type="checkbox"/>
+                            <label for="tag1">标签1</label>
+                        </div>
+                         <div class="checkbox-comp">  
+                            <input id="tag2" type="checkbox"/>
+                            <label for="tag2">标签2</label>
+                        </div>
+                         <div class="checkbox-comp">  
+                            <input id="tag3" type="checkbox"/>
+                            <label for="tag3">标签3</label>
+                        </div>
+                    </div>
                     <div class="clear"></div>
                 </li>
                 <li>
