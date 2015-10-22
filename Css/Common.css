@@ -115,9 +115,18 @@ textarea{outline:none;}
 .navBar ul li{float:left;}
 .navBar ul li a{height:34px;line-height:34px;padding:0px 10px;margin-top:7px;display:block;border-radius:2px;}
 .navBar ul li a:hover{background:#f2f2ea;}
-.navBar ul li a b{float:left;}
+.navBar ul li a b{float: left}
 .navBar ul li a span{float:left;font-size:14px;color:#8a959e;}
 .navBar .border{height:30px;border-left:1px solid #e5e5e5;border-right:1px solid #fff;margin:9px 20px 0px;}
+
+/**增加按钮**/
+.btnAdd b{width:14px;height:14px;background:url(/Admin/Images/AdminIcons.png) no-repeat -298px -22px;margin:10px 5px 0px 0px;}
+/**过滤按钮*/
+.btnFilter b{width:19px;height:12px;background:url(/Admin/Images/AdminIcons.png) no-repeat -382px 0px;margin:11px 5px 0px 0px;}
+/**更多按钮**/
+.btnMore b{width:12px;height:8px;background:url(/Admin/Images/AdminIcons.png) no-repeat -358px 0px;margin:13px 5px 0px 0px;}
+/**搜索按钮**/
+.btnSearch b{width:18px;height:18px;background:url(/Admin/Images/AdminIcons.png) no-repeat -330px 0px;margin:8px 0px 0px 0px;}
 
 /*右侧*/
 .userBox{padding:15px;margin-bottom:15px;background:#fbfbfb;border:1px solid #e1e1e1;box-shadow:0px 0px 3px #eee,inset 0px 0px 3px #fff;}
@@ -193,12 +202,18 @@ textarea{outline:none;}
 .pagesList a:hover{background:#d94c30;color:#fff;border:1px solid #cc402b;}
 .loadMore{width:150px;height:38px;line-height:38px;text-align:center;background:#f9f9f7;border:1px solid #e1e1e1;border-radius:3px;font-size:14px;color:#666;display:block;margin:50px auto 40px;}
 
-/**图标按钮**/
-.btnAdd b{width:14px;height:14px;background:url(/Admin/Images/AdminIcons.png) no-repeat -298px -22px;margin:10px 5px 0px 0px;}
-.btnFilter b{width:19px;height:12px;background:url(/Admin/Images/AdminIcons.png) no-repeat -382px 0px;margin:11px 5px 0px 0px;}
-.btnMore b{width:12px;height:8px;background:url(/Admin/Images/AdminIcons.png) no-repeat -358px 0px;margin:13px 5px 0px 0px;}
-.btnSearch b{width:18px;height:18px;background:url(/Admin/Images/AdminIcons.png) no-repeat -330px 0px;margin:8px 0px 0px 0px;}
-.btnEdit{background:url(/Admin/Images/AdminIcons.png) no-repeat -257px 0px;}
-.btnDelete{background:url(/Admin/Images/AdminIcons.png) no-repeat -305px 0px;}
-.btnEdit:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -315px -47px;}
-.btnDelete:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -363px -47px;}
+
+.add-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -298px -22px;}
+.filter-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -382px 0px;}
+.more-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -358px 0px;}
+.search-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -330px 0px;}
+
+.edit-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -257px 0px;}
+.edit-btn:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -315px -47px;}
+.del-btn{background:url(/Admin/Images/AdminIcons.png) no-repeat -305px 0px;}
+.del-btn:hover{background:url(/Admin/Images/AdminIcons.png) no-repeat -363px -47px;}
+/**图片选择按钮**/
+.btnChoose{width:120px;height:38px;line-height:38px;border:1px solid #ccc;border-radius:2px;display:block;overflow:hidden;}
+.btnChoose b{width:20px;height:16px;background:url(/Admin/Images/AdminIcons.png) no-repeat -154px -201px;float:left;margin:11px 5px 0px 20px;}
+.btnChoose i{float:left;font-style:normal;color:#808080;}
+
