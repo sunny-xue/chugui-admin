@@ -183,7 +183,7 @@ textarea{outline:none;}
 .list-comp .list-table{margin:0px 0px;}
 .list-table .list-header-row{height:40px;line-height:40px;padding-left: 20px;background:#f9f9f7;font-size:14px;color:#d84c31;overflow:hidden;border-top:1px solid #e1e1e1;border-bottom:1px solid #e1e1e1;}
 .list-table .list-header-row span{width:20%;display: inline-block;}
-.list-table .list-row{height:60px;line-height:60px;padding-left: 20px;color:#333;overflow:hidden;border-bottom:1px solid #e1e1e1;}
+.list-table .list-row{height:60px;line-height:60px;padding-left: 20px;color:#333;overflow:hidden;border-bottom:1px solid #e1e1e1;white-space: nowrap;}
 .list-table .list-row span{width:20%;display: inline-block;}
 .list-table .list-row:hover{background:#f9f9f7;}
 /*分页页码样式*/
